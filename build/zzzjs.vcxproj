@@ -1,0 +1,756 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{2E68CB15-3F41-4F54-9806-1ACA448A5CE4}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>zzzjs</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\obj\$(Configuration)\$(TargetName)\</OutDir>
+    <IntDir>..\obj\$(Configuration)\$(TargetName)\</IntDir>
+    <TargetName>$(ProjectName)D</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <TargetName>$(ProjectName)D</TargetName>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\obj\$(Configuration)\$(TargetName)\</OutDir>
+    <IntDir>..\obj\$(Configuration)\$(TargetName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Create</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;__WXMSW__;UNICODE;XP_WIN;HAVE_MEMMOVE;SQLITE_ENABLE_COLUMN_METADATA;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../src;../../../../include;../../../../include/wx_lib/vc_x64_lib/mswud;../../../../include/mozjs;../../../../include/sqlite;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <PrecompiledHeaderFile>precompile.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>../../../../lib/wx_lib/vc_lib;../../../../lib/mozjs;../../../../lib/sqlite;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <OutputFile>$(SolutionDir)exe\$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalDependencies>wxmsw32ud_adv.lib;wxbase32ud_net.lib;wxmsw32ud_core.lib;wxbase32ud.lib;wxmsw32ud_xrc.lib;wxmsw32ud_webview.lib;wxbase32ud_xml.lib;wxmsw32ud_aui.lib;wxmsw32ud_html.lib;wxmsw32ud_stc.lib;wxmsw32ud_propgrid.lib;wxtiffd.lib;wxjpegd.lib;wxpngd.lib;wxzlibd.lib;wxregexud.lib;wxexpatd.lib;wxscintillad.lib;wsock32.lib;wininet.lib;Comctl32.lib;Rpcrt4.lib;mpr.lib;Winmm.lib;js_static.lib;mozjs-24.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Create</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;__WXMSW__;UNICODE;XP_WIN;HAVE_MEMMOVE;SQLITE_ENABLE_COLUMN_METADATA;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../src;../../../../include;../../../../include/wx_lib/vc_x64_lib/mswud;../../../../include/mozjs;../../../../include/sqlite;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <PrecompiledHeaderFile>precompile.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>../../../../lib/wx_lib/vc_x64_lib;../../../../lib/mozjs64;../../../../lib/sqlite;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <OutputFile>$(SolutionDir)exe\$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalDependencies>wxmsw32ud_adv.lib;wxbase32ud_net.lib;wxmsw32ud_core.lib;wxbase32ud.lib;wxmsw32ud_xrc.lib;wxmsw32ud_webview.lib;wxbase32ud_xml.lib;wxmsw32ud_aui.lib;wxmsw32ud_html.lib;wxmsw32ud_stc.lib;wxmsw32ud_propgrid.lib;wxtiffd.lib;wxjpegd.lib;wxpngd.lib;wxzlibd.lib;wxregexud.lib;wxexpatd.lib;wxscintillad.lib;wsock32.lib;wininet.lib;Comctl32.lib;Rpcrt4.lib;mpr.lib;Winmm.lib;js_static.lib;mozjs-24.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;__WXMSW__;UNICODE;XP_WIN;HAVE_MEMMOVE;SQLITE_ENABLE_COLUMN_METADATA;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../../../../../include;../../../../../include/wx_lib;../src;../../../../../include/mozjs;../../../../../include/sqlite;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>wxmsw31u_adv.lib;wxbase31u_net.lib;wxmsw31u_core.lib;wxbase31u.lib;wxmsw31u_xrc.lib;wxmsw31u_webview.lib;wxbase31u_xml.lib;wxmsw31u_aui.lib;wxmsw31u_html.lib;wxmsw31u_stc.lib;wxmsw31u_propgrid.lib;wxtiff.lib;wxjpeg.lib;wxpng.lib;wxzlib.lib;wxregexu.lib;wxexpat.lib;wxscintilla.lib;wsock32.lib;wininet.lib;Comctl32.lib;Rpcrt4.lib;mpr.lib;Winmm.lib;js_static.lib;mozjs-24.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../../../../../lib/wx_lib;../../../../../lib/mozjs;../../../../../lib/sqlite;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <OutputFile>$(SolutionDir)exe\$(TargetName)$(TargetExt)</OutputFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;__WXMSW__;UNICODE;XP_WIN;HAVE_MEMMOVE;SQLITE_ENABLE_COLUMN_METADATA;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../../../../../include;../../../../../include/wx_lib;../src;../../../../../include/mozjs;../../../../../include/sqlite;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>wxmsw31u_adv.lib;wxbase31u_net.lib;wxmsw31u_core.lib;wxbase31u.lib;wxmsw31u_xrc.lib;wxmsw31u_webview.lib;wxbase31u_xml.lib;wxmsw31u_aui.lib;wxmsw31u_html.lib;wxmsw31u_stc.lib;wxmsw31u_propgrid.lib;wxtiff.lib;wxjpeg.lib;wxpng.lib;wxzlib.lib;wxregexu.lib;wxexpat.lib;wxscintilla.lib;wsock32.lib;wininet.lib;Comctl32.lib;Rpcrt4.lib;mpr.lib;Winmm.lib;js_static.lib;mozjs-24.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../../../../../lib/wx_lib;../../../../../lib/mozjs;../../../../../lib/sqlite;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <OutputFile>$(SolutionDir)exe\$(TargetName)$(TargetExt)</OutputFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\gui\appmain.h" />
+    <ClInclude Include="..\src\js\app\app.h" />
+    <ClInclude Include="..\src\js\common\apiwrap.h" />
+    <ClInclude Include="..\src\js\common\clntdata.h" />
+    <ClInclude Include="..\src\js\common\conf.h" />
+    <ClInclude Include="..\src\js\common\defs.h" />
+    <ClInclude Include="..\src\js\common\evtconn.h" />
+    <ClInclude Include="..\src\js\common\index.h" />
+    <ClInclude Include="..\src\js\common\jsutil.h" />
+    <ClInclude Include="..\src\js\common\jswrap.h" />
+    <ClInclude Include="..\src\js\common\script.h" />
+    <ClInclude Include="..\src\js\common\strsptr.h" />
+    <ClInclude Include="..\src\js\common\type.h" />
+    <ClInclude Include="..\src\js\engine\mng_inst.h" />
+    <ClInclude Include="..\src\js\engine\scrcxpriv.h" />
+    <ClInclude Include="..\src\js\expat\attr.h" />
+    <ClInclude Include="..\src\js\expat\parser.h" />
+    <ClInclude Include="..\src\js\expat\zzzjs_expat_init.h" />
+    <ClInclude Include="..\src\js\ext\jsmembuf.h" />
+    <ClInclude Include="..\src\js\ext\locale.h" />
+    <ClInclude Include="..\src\js\ext\point.h" />
+    <ClInclude Include="..\src\js\ext\zzzjs_ext_init.h" />
+    <ClInclude Include="..\src\js\gui\aui\auimanager.h" />
+    <ClInclude Include="..\src\js\gui\aui\auimanagerevent.h" />
+    <ClInclude Include="..\src\js\gui\aui\auinotebook.h" />
+    <ClInclude Include="..\src\js\gui\aui\auinotebookevent.h" />
+    <ClInclude Include="..\src\js\gui\aui\auipanelinfo.h" />
+    <ClInclude Include="..\src\js\gui\aui\constant.h" />
+    <ClInclude Include="..\src\js\gui\control\bmpbtn.h" />
+    <ClInclude Include="..\src\js\gui\control\bookctrlbase.h" />
+    <ClInclude Include="..\src\js\gui\control\button.h" />
+    <ClInclude Include="..\src\js\gui\control\caldate.h" />
+    <ClInclude Include="..\src\js\gui\control\calendar.h" />
+    <ClInclude Include="..\src\js\gui\control\checkbox.h" />
+    <ClInclude Include="..\src\js\gui\control\chklstbx.h" />
+    <ClInclude Include="..\src\js\gui\control\chklstbxchk.h" />
+    <ClInclude Include="..\src\js\gui\control\choice.h" />
+    <ClInclude Include="..\src\js\gui\control\choicebook.h" />
+    <ClInclude Include="..\src\js\gui\control\coldata.h" />
+    <ClInclude Include="..\src\js\gui\control\coldlg.h" />
+    <ClInclude Include="..\src\js\gui\control\combobox.h" />
+    <ClInclude Include="..\src\js\gui\control\control.h" />
+    <ClInclude Include="..\src\js\gui\control\ctrlitem.h" />
+    <ClInclude Include="..\src\js\gui\control\dialog.h" />
+    <ClInclude Include="..\src\js\gui\control\dirdlg.h" />
+    <ClInclude Include="..\src\js\gui\control\filedlg.h" />
+    <ClInclude Include="..\src\js\gui\control\finddata.h" />
+    <ClInclude Include="..\src\js\gui\control\findrdlg.h" />
+    <ClInclude Include="..\src\js\gui\control\fontdata.h" />
+    <ClInclude Include="..\src\js\gui\control\fontdlg.h" />
+    <ClInclude Include="..\src\js\gui\control\frame.h" />
+    <ClInclude Include="..\src\js\gui\control\gauge.h" />
+    <ClInclude Include="..\src\js\gui\control\headercolumn.h" />
+    <ClInclude Include="..\src\js\gui\control\helpbtn.h" />
+    <ClInclude Include="..\src\js\gui\control\htmlwin.h" />
+    <ClInclude Include="..\src\js\gui\control\item.h" />
+    <ClInclude Include="..\src\js\gui\control\listbook.h" />
+    <ClInclude Include="..\src\js\gui\control\listbox.h" />
+    <ClInclude Include="..\src\js\gui\control\listctrl.h" />
+    <ClInclude Include="..\src\js\gui\control\listhit.h" />
+    <ClInclude Include="..\src\js\gui\control\listitattr.h" />
+    <ClInclude Include="..\src\js\gui\control\listitem.h" />
+    <ClInclude Include="..\src\js\gui\control\mdi.h" />
+    <ClInclude Include="..\src\js\gui\control\mdichild.h" />
+    <ClInclude Include="..\src\js\gui\control\menu.h" />
+    <ClInclude Include="..\src\js\gui\control\menubar.h" />
+    <ClInclude Include="..\src\js\gui\control\menuitem.h" />
+    <ClInclude Include="..\src\js\gui\control\notebook.h" />
+    <ClInclude Include="..\src\js\gui\control\panel.h" />
+    <ClInclude Include="..\src\js\gui\control\pwdlg.h" />
+    <ClInclude Include="..\src\js\gui\control\radiobox.h" />
+    <ClInclude Include="..\src\js\gui\control\radioboxit.h" />
+    <ClInclude Include="..\src\js\gui\control\radiobtn.h" />
+    <ClInclude Include="..\src\js\gui\control\scrollwnd.h" />
+    <ClInclude Include="..\src\js\gui\control\setableheadercolumn.h" />
+    <ClInclude Include="..\src\js\gui\control\simplebook.h" />
+    <ClInclude Include="..\src\js\gui\control\slider.h" />
+    <ClInclude Include="..\src\js\gui\control\spinbtn.h" />
+    <ClInclude Include="..\src\js\gui\control\spinctrl.h" />
+    <ClInclude Include="..\src\js\gui\control\splitwin.h" />
+    <ClInclude Include="..\src\js\gui\control\statbar.h" />
+    <ClInclude Include="..\src\js\gui\control\staticbx.h" />
+    <ClInclude Include="..\src\js\gui\control\sttext.h" />
+    <ClInclude Include="..\src\js\gui\control\tbartool.h" />
+    <ClInclude Include="..\src\js\gui\control\textctrl.h" />
+    <ClInclude Include="..\src\js\gui\control\toolbar.h" />
+    <ClInclude Include="..\src\js\gui\control\toolbook.h" />
+    <ClInclude Include="..\src\js\gui\control\toplevel.h" />
+    <ClInclude Include="..\src\js\gui\control\treebook.h" />
+    <ClInclude Include="..\src\js\gui\control\treectrl.h" />
+    <ClInclude Include="..\src\js\gui\control\treehit.h" />
+    <ClInclude Include="..\src\js\gui\control\treeid.h" />
+    <ClInclude Include="..\src\js\gui\control\treeitem.h" />
+    <ClInclude Include="..\src\js\gui\control\txtdlg.h" />
+    <ClInclude Include="..\src\js\gui\control\window.h" />
+    <ClInclude Include="..\src\js\gui\dataview\dataviewbitmaprender.h" />
+    <ClInclude Include="..\src\js\gui\dataview\dataviewchoicebyindexrender.h" />
+    <ClInclude Include="..\src\js\gui\dataview\dataviewchoicerender.h" />
+    <ClInclude Include="..\src\js\gui\dataview\dataviewcolmn.h" />
+    <ClInclude Include="..\src\js\gui\dataview\dataviewctrl.h" />
+    <ClInclude Include="..\src\js\gui\dataview\dataviewcustomrender.h" />
+    <ClInclude Include="..\src\js\gui\dataview\dataviewdaterender.h" />
+    <ClInclude Include="..\src\js\gui\dataview\dataviewevent.h" />
+    <ClInclude Include="..\src\js\gui\dataview\dataviewicontextrender.h" />
+    <ClInclude Include="..\src\js\gui\dataview\dataviewindexlistmodel.h" />
+    <ClInclude Include="..\src\js\gui\dataview\dataviewitem.h" />
+    <ClInclude Include="..\src\js\gui\dataview\dataviewitemattr.h" />
+    <ClInclude Include="..\src\js\gui\dataview\dataviewlistctrl.h" />
+    <ClInclude Include="..\src\js\gui\dataview\dataviewliststore.h" />
+    <ClInclude Include="..\src\js\gui\dataview\dataviewmodel.h" />
+    <ClInclude Include="..\src\js\gui\dataview\dataviewprogressrender.h" />
+    <ClInclude Include="..\src\js\gui\dataview\dataviewrender.h" />
+    <ClInclude Include="..\src\js\gui\dataview\dataviewspinrender.h" />
+    <ClInclude Include="..\src\js\gui\dataview\dataviewtextrender.h" />
+    <ClInclude Include="..\src\js\gui\dataview\dataviewtogglerender.h" />
+    <ClInclude Include="..\src\js\gui\dataview\dataviewtreectrl.h" />
+    <ClInclude Include="..\src\js\gui\dataview\dataviewtreestore.h" />
+    <ClInclude Include="..\src\js\gui\dataview\dataviewvirtuallistmodel.h" />
+    <ClInclude Include="..\src\js\gui\dataview\zzzjs_gui_dataview_init.h" />
+    <ClInclude Include="..\src\js\gui\errors.h" />
+    <ClInclude Include="..\src\js\gui\event\activate.h" />
+    <ClInclude Include="..\src\js\gui\event\bookctrlevt.h" />
+    <ClInclude Include="..\src\js\gui\event\cal.h" />
+    <ClInclude Include="..\src\js\gui\event\close.h" />
+    <ClInclude Include="..\src\js\gui\event\command.h" />
+    <ClInclude Include="..\src\js\gui\event\event.h" />
+    <ClInclude Include="..\src\js\gui\event\evt_paint.h" />
+    <ClInclude Include="..\src\js\gui\event\findr.h" />
+    <ClInclude Include="..\src\js\gui\event\help.h" />
+    <ClInclude Include="..\src\js\gui\event\htmllink.h" />
+    <ClInclude Include="..\src\js\gui\event\iconize.h" />
+    <ClInclude Include="..\src\js\gui\event\jsevent.h" />
+    <ClInclude Include="..\src\js\gui\event\key.h" />
+    <ClInclude Include="..\src\js\gui\event\listevt.h" />
+    <ClInclude Include="..\src\js\gui\event\mouse.h" />
+    <ClInclude Include="..\src\js\gui\event\move.h" />
+    <ClInclude Include="..\src\js\gui\event\notify.h" />
+    <ClInclude Include="..\src\js\gui\event\scroll.h" />
+    <ClInclude Include="..\src\js\gui\event\scrollwin.h" />
+    <ClInclude Include="..\src\js\gui\event\sizeevt.h" />
+    <ClInclude Include="..\src\js\gui\event\spinevt.h" />
+    <ClInclude Include="..\src\js\gui\event\split.h" />
+    <ClInclude Include="..\src\js\gui\event\treeevt.h" />
+    <ClInclude Include="..\src\js\gui\gdi\auto_buffered_paint_dc.h" />
+    <ClInclude Include="..\src\js\gui\gdi\buffered_dc.h" />
+    <ClInclude Include="..\src\js\gui\gdi\buffered_paint_dc.h" />
+    <ClInclude Include="..\src\js\gui\gdi\client_dc.h" />
+    <ClInclude Include="..\src\js\gui\gdi\dc.h" />
+    <ClInclude Include="..\src\js\gui\gdi\gcdc.h" />
+    <ClInclude Include="..\src\js\gui\gdi\gdi_init.h" />
+    <ClInclude Include="..\src\js\gui\gdi\memory_dc.h" />
+    <ClInclude Include="..\src\js\gui\gdi\metafile.h" />
+    <ClInclude Include="..\src\js\gui\gdi\metafile_dc.h" />
+    <ClInclude Include="..\src\js\gui\gdi\mirror_dc.h" />
+    <ClInclude Include="..\src\js\gui\gdi\paint_dc.h" />
+    <ClInclude Include="..\src\js\gui\gdi\screen_dc.h" />
+    <ClInclude Include="..\src\js\gui\gdi\window_dc.h" />
+    <ClInclude Include="..\src\js\gui\misc\accentry.h" />
+    <ClInclude Include="..\src\js\gui\misc\acctable.h" />
+    <ClInclude Include="..\src\js\gui\misc\art_provider.h" />
+    <ClInclude Include="..\src\js\gui\misc\autoobj.h" />
+    <ClInclude Include="..\src\js\gui\misc\bitmap.h" />
+    <ClInclude Include="..\src\js\gui\misc\boxsizer.h" />
+    <ClInclude Include="..\src\js\gui\misc\brush.h" />
+    <ClInclude Include="..\src\js\gui\misc\cmnconst.h" />
+    <ClInclude Include="..\src\js\gui\misc\colour.h" />
+    <ClInclude Include="..\src\js\gui\misc\colourdb.h" />
+    <ClInclude Include="..\src\js\gui\misc\constant.h" />
+    <ClInclude Include="..\src\js\gui\misc\cshelp.h" />
+    <ClInclude Include="..\src\js\gui\misc\flexgrid.h" />
+    <ClInclude Include="..\src\js\gui\misc\font.h" />
+    <ClInclude Include="..\src\js\gui\misc\fontenum.h" />
+    <ClInclude Include="..\src\js\gui\misc\fontlist.h" />
+    <ClInclude Include="..\src\js\gui\misc\genval.h" />
+    <ClInclude Include="..\src\js\gui\misc\globfun.h" />
+    <ClInclude Include="..\src\js\gui\misc\gridszr.h" />
+    <ClInclude Include="..\src\js\gui\misc\icon.h" />
+    <ClInclude Include="..\src\js\gui\misc\image.h" />
+    <ClInclude Include="..\src\js\gui\misc\imagelst.h" />
+    <ClInclude Include="..\src\js\gui\misc\imghand.h" />
+    <ClInclude Include="..\src\js\gui\misc\mask.h" />
+    <ClInclude Include="..\src\js\gui\misc\pallet.h" />
+    <ClInclude Include="..\src\js\gui\misc\pen.h" />
+    <ClInclude Include="..\src\js\gui\misc\rect.h" />
+    <ClInclude Include="..\src\js\gui\misc\region.h" />
+    <ClInclude Include="..\src\js\gui\misc\settings.h" />
+    <ClInclude Include="..\src\js\gui\misc\size.h" />
+    <ClInclude Include="..\src\js\gui\misc\sizer.h" />
+    <ClInclude Include="..\src\js\gui\misc\stsizer.h" />
+    <ClInclude Include="..\src\js\gui\misc\textval.h" />
+    <ClInclude Include="..\src\js\gui\misc\validate.h" />
+    <ClInclude Include="..\src\js\gui\pg\pg_arg_id.h" />
+    <ClInclude Include="..\src\js\gui\pg\pg_cell.h" />
+    <ClInclude Include="..\src\js\gui\pg\pg_choices.h" />
+    <ClInclude Include="..\src\js\gui\pg\pg_choice_entry.h" />
+    <ClInclude Include="..\src\js\gui\pg\pg_colour_property_value.h" />
+    <ClInclude Include="..\src\js\gui\pg\pg_editor.h" />
+    <ClInclude Include="..\src\js\gui\pg\pg_evt_grid.h" />
+    <ClInclude Include="..\src\js\gui\pg\pg_grid.h" />
+    <ClInclude Include="..\src\js\gui\pg\pg_grid_if.h" />
+    <ClInclude Include="..\src\js\gui\pg\pg_grid_manager.h" />
+    <ClInclude Include="..\src\js\gui\pg\pg_grid_page.h" />
+    <ClInclude Include="..\src\js\gui\pg\pg_init.h" />
+    <ClInclude Include="..\src\js\gui\pg\pg_prop.h" />
+    <ClInclude Include="..\src\js\gui\pg\pg_prop_array_string.h" />
+    <ClInclude Include="..\src\js\gui\pg\pg_prop_bool.h" />
+    <ClInclude Include="..\src\js\gui\pg\pg_prop_category.h" />
+    <ClInclude Include="..\src\js\gui\pg\pg_prop_colour.h" />
+    <ClInclude Include="..\src\js\gui\pg\pg_prop_date.h" />
+    <ClInclude Include="..\src\js\gui\pg\pg_prop_dir.h" />
+    <ClInclude Include="..\src\js\gui\pg\pg_prop_edit_enum.h" />
+    <ClInclude Include="..\src\js\gui\pg\pg_prop_enum.h" />
+    <ClInclude Include="..\src\js\gui\pg\pg_prop_file.h" />
+    <ClInclude Include="..\src\js\gui\pg\pg_prop_flags.h" />
+    <ClInclude Include="..\src\js\gui\pg\pg_prop_float.h" />
+    <ClInclude Include="..\src\js\gui\pg\pg_prop_font.h" />
+    <ClInclude Include="..\src\js\gui\pg\pg_prop_image_file.h" />
+    <ClInclude Include="..\src\js\gui\pg\pg_prop_int.h" />
+    <ClInclude Include="..\src\js\gui\pg\pg_prop_long_string.h" />
+    <ClInclude Include="..\src\js\gui\pg\pg_prop_multi_choice.h" />
+    <ClInclude Include="..\src\js\gui\pg\pg_prop_string.h" />
+    <ClInclude Include="..\src\js\gui\pg\pg_prop_system_colour.h" />
+    <ClInclude Include="..\src\js\gui\pg\pg_prop_uint.h" />
+    <ClInclude Include="..\src\js\gui\pg\pg_validation_info.h" />
+    <ClInclude Include="..\src\js\gui\pg\pg_wndlist.h" />
+    <ClInclude Include="..\src\js\gui\zzzjs_gui_init.h" />
+    <ClInclude Include="..\src\js\io\aistream.h" />
+    <ClInclude Include="..\src\js\io\aostream.h" />
+    <ClInclude Include="..\src\js\io\archentry.h" />
+    <ClInclude Include="..\src\js\io\bistream.h" />
+    <ClInclude Include="..\src\js\io\bostream.h" />
+    <ClInclude Include="..\src\js\io\constant.h" />
+    <ClInclude Include="..\src\js\io\costream.h" />
+    <ClInclude Include="..\src\js\io\dir.h" />
+    <ClInclude Include="..\src\js\io\dirtrav.h" />
+    <ClInclude Include="..\src\js\io\distream.h" />
+    <ClInclude Include="..\src\js\io\dostream.h" />
+    <ClInclude Include="..\src\js\io\ffile.h" />
+    <ClInclude Include="..\src\js\io\ffistream.h" />
+    <ClInclude Include="..\src\js\io\ffostream.h" />
+    <ClInclude Include="..\src\js\io\file.h" />
+    <ClInclude Include="..\src\js\io\filename.h" />
+    <ClInclude Include="..\src\js\io\fistream.h" />
+    <ClInclude Include="..\src\js\io\fn.h" />
+    <ClInclude Include="..\src\js\io\fostream.h" />
+    <ClInclude Include="..\src\js\io\http.h" />
+    <ClInclude Include="..\src\js\io\httphdr.h" />
+    <ClInclude Include="..\src\js\io\ipaddr.h" />
+    <ClInclude Include="..\src\js\io\ipv4addr.h" />
+    <ClInclude Include="..\src\js\io\istream.h" />
+    <ClInclude Include="..\src\js\io\jsstream.h" />
+    <ClInclude Include="..\src\js\io\mistream.h" />
+    <ClInclude Include="..\src\js\io\mostream.h" />
+    <ClInclude Include="..\src\js\io\ostream.h" />
+    <ClInclude Include="..\src\js\io\process.h" />
+    <ClInclude Include="..\src\js\io\protocol.h" />
+    <ClInclude Include="..\src\js\io\sistream.h" />
+    <ClInclude Include="..\src\js\io\sockaddr.h" />
+    <ClInclude Include="..\src\js\io\sockbase.h" />
+    <ClInclude Include="..\src\js\io\sockclient.h" />
+    <ClInclude Include="..\src\js\io\sockevth.h" />
+    <ClInclude Include="..\src\js\io\socksrv.h" />
+    <ClInclude Include="..\src\js\io\sostream.h" />
+    <ClInclude Include="..\src\js\io\sound.h" />
+    <ClInclude Include="..\src\js\io\stream.h" />
+    <ClInclude Include="..\src\js\io\tempfile.h" />
+    <ClInclude Include="..\src\js\io\textfile.h" />
+    <ClInclude Include="..\src\js\io\textline.h" />
+    <ClInclude Include="..\src\js\io\tistream.h" />
+    <ClInclude Include="..\src\js\io\tostream.h" />
+    <ClInclude Include="..\src\js\io\uri.h" />
+    <ClInclude Include="..\src\js\io\url.h" />
+    <ClInclude Include="..\src\js\io\zipentry.h" />
+    <ClInclude Include="..\src\js\io\zistream.h" />
+    <ClInclude Include="..\src\js\io\zostream.h" />
+    <ClInclude Include="..\src\js\io\zzzjs_io_init.h" />
+    <ClInclude Include="..\src\js\log\wxlog.h" />
+    <ClInclude Include="..\src\js\log\wxlogchain.h" />
+    <ClInclude Include="..\src\js\log\wxlogtext.h" />
+    <ClInclude Include="..\src\js\log\wxlog_init.h" />
+    <ClInclude Include="..\src\js\sqlite\db.h" />
+    <ClInclude Include="..\src\js\sqlite\stmt.h" />
+    <ClInclude Include="..\src\js\sqlite\zzzjs_sqlite_init.h" />
+    <ClInclude Include="..\src\js\xml\xml_doc.h" />
+    <ClInclude Include="..\src\js\xml\xml_node.h" />
+    <ClInclude Include="..\src\js\xml\zzzjs_xml_init.h" />
+    <ClInclude Include="..\src\precompile.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\gui\appmain.cpp" />
+    <ClCompile Include="..\src\js\app\app.cpp" />
+    <ClCompile Include="..\src\js\common\conf.cpp" />
+    <ClCompile Include="..\src\js\common\jsutil.cpp" />
+    <ClCompile Include="..\src\js\common\script.cpp" />
+    <ClCompile Include="..\src\js\common\type.cpp" />
+    <ClCompile Include="..\src\js\engine\mng_inst.cpp" />
+    <ClCompile Include="..\src\js\engine\scrcxpriv.cpp" />
+    <ClCompile Include="..\src\js\expat\attr.cpp" />
+    <ClCompile Include="..\src\js\expat\parser.cpp" />
+    <ClCompile Include="..\src\js\expat\zzzjs_expat_init.cpp" />
+    <ClCompile Include="..\src\js\ext\jsmembuf.cpp" />
+    <ClCompile Include="..\src\js\ext\locale.cpp" />
+    <ClCompile Include="..\src\js\ext\point.cpp" />
+    <ClCompile Include="..\src\js\ext\zzzjs_ext_init.cpp" />
+    <ClCompile Include="..\src\js\gui\aui\auimanager.cpp" />
+    <ClCompile Include="..\src\js\gui\aui\auimanagerevent.cpp" />
+    <ClCompile Include="..\src\js\gui\aui\auinotebook.cpp" />
+    <ClCompile Include="..\src\js\gui\aui\auinotebookevent.cpp" />
+    <ClCompile Include="..\src\js\gui\aui\auipanelinfo.cpp" />
+    <ClCompile Include="..\src\js\gui\aui\aui_define_constant.cpp" />
+    <ClCompile Include="..\src\js\gui\control\bmpbtn.cpp" />
+    <ClCompile Include="..\src\js\gui\control\bookctrlbase.cpp" />
+    <ClCompile Include="..\src\js\gui\control\button.cpp" />
+    <ClCompile Include="..\src\js\gui\control\caldate.cpp" />
+    <ClCompile Include="..\src\js\gui\control\calendar.cpp" />
+    <ClCompile Include="..\src\js\gui\control\checkbox.cpp" />
+    <ClCompile Include="..\src\js\gui\control\chklstbx.cpp" />
+    <ClCompile Include="..\src\js\gui\control\chklstbxchk.cpp" />
+    <ClCompile Include="..\src\js\gui\control\choice.cpp" />
+    <ClCompile Include="..\src\js\gui\control\choicebook.cpp" />
+    <ClCompile Include="..\src\js\gui\control\coldata.cpp" />
+    <ClCompile Include="..\src\js\gui\control\coldlg.cpp" />
+    <ClCompile Include="..\src\js\gui\control\combobox.cpp" />
+    <ClCompile Include="..\src\js\gui\control\control.cpp" />
+    <ClCompile Include="..\src\js\gui\control\ctrlitem.cpp" />
+    <ClCompile Include="..\src\js\gui\control\dialog.cpp" />
+    <ClCompile Include="..\src\js\gui\control\dirdlg.cpp" />
+    <ClCompile Include="..\src\js\gui\control\filedlg.cpp" />
+    <ClCompile Include="..\src\js\gui\control\finddata.cpp" />
+    <ClCompile Include="..\src\js\gui\control\findrdlg.cpp" />
+    <ClCompile Include="..\src\js\gui\control\fontdata.cpp" />
+    <ClCompile Include="..\src\js\gui\control\fontdlg.cpp" />
+    <ClCompile Include="..\src\js\gui\control\frame.cpp" />
+    <ClCompile Include="..\src\js\gui\control\gauge.cpp" />
+    <ClCompile Include="..\src\js\gui\control\headercolumn.cpp" />
+    <ClCompile Include="..\src\js\gui\control\helpbtn.cpp" />
+    <ClCompile Include="..\src\js\gui\control\htmlwin.cpp" />
+    <ClCompile Include="..\src\js\gui\control\item.cpp" />
+    <ClCompile Include="..\src\js\gui\control\listbook.cpp" />
+    <ClCompile Include="..\src\js\gui\control\listbox.cpp" />
+    <ClCompile Include="..\src\js\gui\control\listctrl.cpp" />
+    <ClCompile Include="..\src\js\gui\control\listhit.cpp" />
+    <ClCompile Include="..\src\js\gui\control\listitattr.cpp" />
+    <ClCompile Include="..\src\js\gui\control\listitem.cpp" />
+    <ClCompile Include="..\src\js\gui\control\mdi.cpp" />
+    <ClCompile Include="..\src\js\gui\control\mdichild.cpp" />
+    <ClCompile Include="..\src\js\gui\control\menu.cpp" />
+    <ClCompile Include="..\src\js\gui\control\menubar.cpp" />
+    <ClCompile Include="..\src\js\gui\control\menuitem.cpp" />
+    <ClCompile Include="..\src\js\gui\control\notebook.cpp" />
+    <ClCompile Include="..\src\js\gui\control\panel.cpp" />
+    <ClCompile Include="..\src\js\gui\control\pwdlg.cpp" />
+    <ClCompile Include="..\src\js\gui\control\radiobox.cpp" />
+    <ClCompile Include="..\src\js\gui\control\radioboxit.cpp" />
+    <ClCompile Include="..\src\js\gui\control\radiobtn.cpp" />
+    <ClCompile Include="..\src\js\gui\control\scrollwnd.cpp" />
+    <ClCompile Include="..\src\js\gui\control\setableheadercolumn.cpp" />
+    <ClCompile Include="..\src\js\gui\control\simplebook.cpp" />
+    <ClCompile Include="..\src\js\gui\control\slider.cpp" />
+    <ClCompile Include="..\src\js\gui\control\spinbtn.cpp" />
+    <ClCompile Include="..\src\js\gui\control\spinctrl.cpp" />
+    <ClCompile Include="..\src\js\gui\control\splitwin.cpp" />
+    <ClCompile Include="..\src\js\gui\control\statbar.cpp" />
+    <ClCompile Include="..\src\js\gui\control\staticbx.cpp" />
+    <ClCompile Include="..\src\js\gui\control\sttext.cpp" />
+    <ClCompile Include="..\src\js\gui\control\tbartool.cpp" />
+    <ClCompile Include="..\src\js\gui\control\textctrl.cpp" />
+    <ClCompile Include="..\src\js\gui\control\toolbar.cpp" />
+    <ClCompile Include="..\src\js\gui\control\toolbook.cpp" />
+    <ClCompile Include="..\src\js\gui\control\toplevel.cpp" />
+    <ClCompile Include="..\src\js\gui\control\treebook.cpp" />
+    <ClCompile Include="..\src\js\gui\control\treectrl.cpp" />
+    <ClCompile Include="..\src\js\gui\control\treehit.cpp" />
+    <ClCompile Include="..\src\js\gui\control\treeid.cpp" />
+    <ClCompile Include="..\src\js\gui\control\treeitem.cpp" />
+    <ClCompile Include="..\src\js\gui\control\txtdlg.cpp" />
+    <ClCompile Include="..\src\js\gui\control\window.cpp" />
+    <ClCompile Include="..\src\js\gui\dataview\dataviewbitmaprender.cpp" />
+    <ClCompile Include="..\src\js\gui\dataview\dataviewchoicebyindexrender.cpp" />
+    <ClCompile Include="..\src\js\gui\dataview\dataviewchoicerender.cpp" />
+    <ClCompile Include="..\src\js\gui\dataview\dataviewcolmn.cpp" />
+    <ClCompile Include="..\src\js\gui\dataview\dataviewctrl.cpp" />
+    <ClCompile Include="..\src\js\gui\dataview\dataviewcustomrender.cpp" />
+    <ClCompile Include="..\src\js\gui\dataview\dataviewdaterender.cpp" />
+    <ClCompile Include="..\src\js\gui\dataview\dataviewevent.cpp" />
+    <ClCompile Include="..\src\js\gui\dataview\dataviewicontextrender.cpp" />
+    <ClCompile Include="..\src\js\gui\dataview\dataviewindexlistmodel.cpp" />
+    <ClCompile Include="..\src\js\gui\dataview\dataviewitem.cpp" />
+    <ClCompile Include="..\src\js\gui\dataview\dataviewitemattr.cpp" />
+    <ClCompile Include="..\src\js\gui\dataview\dataviewlistctrl.cpp" />
+    <ClCompile Include="..\src\js\gui\dataview\dataviewliststore.cpp" />
+    <ClCompile Include="..\src\js\gui\dataview\dataviewmodel.cpp" />
+    <ClCompile Include="..\src\js\gui\dataview\dataviewprogressrender.cpp" />
+    <ClCompile Include="..\src\js\gui\dataview\dataviewrender.cpp" />
+    <ClCompile Include="..\src\js\gui\dataview\dataviewspinrender.cpp" />
+    <ClCompile Include="..\src\js\gui\dataview\dataviewtextrender.cpp" />
+    <ClCompile Include="..\src\js\gui\dataview\dataviewtogglerender.cpp" />
+    <ClCompile Include="..\src\js\gui\dataview\dataviewtreectrl.cpp" />
+    <ClCompile Include="..\src\js\gui\dataview\dataviewtreestore.cpp" />
+    <ClCompile Include="..\src\js\gui\dataview\dataviewvirtuallistmodel.cpp" />
+    <ClCompile Include="..\src\js\gui\dataview\zzzjs_gui_dataview_init.cpp" />
+    <ClCompile Include="..\src\js\gui\errors.cpp" />
+    <ClCompile Include="..\src\js\gui\event\activate.cpp" />
+    <ClCompile Include="..\src\js\gui\event\bookctrlevt.cpp" />
+    <ClCompile Include="..\src\js\gui\event\cal.cpp" />
+    <ClCompile Include="..\src\js\gui\event\close.cpp" />
+    <ClCompile Include="..\src\js\gui\event\command.cpp" />
+    <ClCompile Include="..\src\js\gui\event\event.cpp" />
+    <ClCompile Include="..\src\js\gui\event\evt_paint.cpp" />
+    <ClCompile Include="..\src\js\gui\event\findr.cpp" />
+    <ClCompile Include="..\src\js\gui\event\focus.cpp" />
+    <ClCompile Include="..\src\js\gui\event\help.cpp" />
+    <ClCompile Include="..\src\js\gui\event\htmllink.cpp" />
+    <ClCompile Include="..\src\js\gui\event\iconize.cpp" />
+    <ClCompile Include="..\src\js\gui\event\initdlg.cpp" />
+    <ClCompile Include="..\src\js\gui\event\jsevent.cpp" />
+    <ClCompile Include="..\src\js\gui\event\key.cpp" />
+    <ClCompile Include="..\src\js\gui\event\listevt.cpp" />
+    <ClCompile Include="..\src\js\gui\event\maximize.cpp" />
+    <ClCompile Include="..\src\js\gui\event\mouse.cpp" />
+    <ClCompile Include="..\src\js\gui\event\move.cpp" />
+    <ClCompile Include="..\src\js\gui\event\notify.cpp" />
+    <ClCompile Include="..\src\js\gui\event\scroll.cpp" />
+    <ClCompile Include="..\src\js\gui\event\scrollwin.cpp" />
+    <ClCompile Include="..\src\js\gui\event\sizeevt.cpp" />
+    <ClCompile Include="..\src\js\gui\event\spinevt.cpp" />
+    <ClCompile Include="..\src\js\gui\event\split.cpp" />
+    <ClCompile Include="..\src\js\gui\event\syscol.cpp" />
+    <ClCompile Include="..\src\js\gui\event\treeevt.cpp" />
+    <ClCompile Include="..\src\js\gui\gdi\auto_buffered_paint_dc.cpp" />
+    <ClCompile Include="..\src\js\gui\gdi\buffered_dc.cpp" />
+    <ClCompile Include="..\src\js\gui\gdi\buffered_paint_dc.cpp" />
+    <ClCompile Include="..\src\js\gui\gdi\client_dc.cpp" />
+    <ClCompile Include="..\src\js\gui\gdi\dc.cpp" />
+    <ClCompile Include="..\src\js\gui\gdi\gcdc.cpp" />
+    <ClCompile Include="..\src\js\gui\gdi\gdi_init.cpp" />
+    <ClCompile Include="..\src\js\gui\gdi\memory_dc.cpp" />
+    <ClCompile Include="..\src\js\gui\gdi\metafile.cpp" />
+    <ClCompile Include="..\src\js\gui\gdi\metafile_dc.cpp" />
+    <ClCompile Include="..\src\js\gui\gdi\mirror_dc.cpp" />
+    <ClCompile Include="..\src\js\gui\gdi\paint_dc.cpp" />
+    <ClCompile Include="..\src\js\gui\gdi\screen_dc.cpp" />
+    <ClCompile Include="..\src\js\gui\gdi\window_dc.cpp" />
+    <ClCompile Include="..\src\js\gui\misc\accentry.cpp" />
+    <ClCompile Include="..\src\js\gui\misc\acctable.cpp" />
+    <ClCompile Include="..\src\js\gui\misc\art_provider.cpp" />
+    <ClCompile Include="..\src\js\gui\misc\autoobj.cpp" />
+    <ClCompile Include="..\src\js\gui\misc\bitmap.cpp" />
+    <ClCompile Include="..\src\js\gui\misc\bmphdlr.cpp" />
+    <ClCompile Include="..\src\js\gui\misc\boxsizer.cpp" />
+    <ClCompile Include="..\src\js\gui\misc\brush.cpp" />
+    <ClCompile Include="..\src\js\gui\misc\cmnconst.cpp" />
+    <ClCompile Include="..\src\js\gui\misc\colour.cpp" />
+    <ClCompile Include="..\src\js\gui\misc\colourdb.cpp" />
+    <ClCompile Include="..\src\js\gui\misc\constant_zzzjs_gui_misc.cpp" />
+    <ClCompile Include="..\src\js\gui\misc\cshelp.cpp" />
+    <ClCompile Include="..\src\js\gui\misc\flexgrid.cpp" />
+    <ClCompile Include="..\src\js\gui\misc\font.cpp" />
+    <ClCompile Include="..\src\js\gui\misc\fontenum.cpp" />
+    <ClCompile Include="..\src\js\gui\misc\fontlist.cpp" />
+    <ClCompile Include="..\src\js\gui\misc\genval.cpp" />
+    <ClCompile Include="..\src\js\gui\misc\gifhdlr.cpp" />
+    <ClCompile Include="..\src\js\gui\misc\globfun.cpp" />
+    <ClCompile Include="..\src\js\gui\misc\gridszr.cpp" />
+    <ClCompile Include="..\src\js\gui\misc\icohdlr.cpp" />
+    <ClCompile Include="..\src\js\gui\misc\icon.cpp" />
+    <ClCompile Include="..\src\js\gui\misc\image.cpp" />
+    <ClCompile Include="..\src\js\gui\misc\imagelst.cpp" />
+    <ClCompile Include="..\src\js\gui\misc\imghand.cpp" />
+    <ClCompile Include="..\src\js\gui\misc\jpghdlr.cpp" />
+    <ClCompile Include="..\src\js\gui\misc\mask.cpp" />
+    <ClCompile Include="..\src\js\gui\misc\pallet.cpp" />
+    <ClCompile Include="..\src\js\gui\misc\pcxhdlr.cpp" />
+    <ClCompile Include="..\src\js\gui\misc\pen.cpp" />
+    <ClCompile Include="..\src\js\gui\misc\pnghdlr.cpp" />
+    <ClCompile Include="..\src\js\gui\misc\pnmhdlr.cpp" />
+    <ClCompile Include="..\src\js\gui\misc\rect.cpp" />
+    <ClCompile Include="..\src\js\gui\misc\region.cpp" />
+    <ClCompile Include="..\src\js\gui\misc\settings.cpp" />
+    <ClCompile Include="..\src\js\gui\misc\size.cpp" />
+    <ClCompile Include="..\src\js\gui\misc\sizer.cpp" />
+    <ClCompile Include="..\src\js\gui\misc\stsizer.cpp" />
+    <ClCompile Include="..\src\js\gui\misc\textval.cpp" />
+    <ClCompile Include="..\src\js\gui\misc\tiffhdlr.cpp" />
+    <ClCompile Include="..\src\js\gui\misc\validator.cpp" />
+    <ClCompile Include="..\src\js\gui\misc\xpmhdlr.cpp" />
+    <ClCompile Include="..\src\js\gui\pg\pg_arg_id.cpp" />
+    <ClCompile Include="..\src\js\gui\pg\pg_cell.cpp" />
+    <ClCompile Include="..\src\js\gui\pg\pg_choices.cpp" />
+    <ClCompile Include="..\src\js\gui\pg\pg_choice_entry.cpp" />
+    <ClCompile Include="..\src\js\gui\pg\pg_colour_property_value.cpp" />
+    <ClCompile Include="..\src\js\gui\pg\pg_editor.cpp" />
+    <ClCompile Include="..\src\js\gui\pg\pg_evt_grid.cpp" />
+    <ClCompile Include="..\src\js\gui\pg\pg_grid.cpp" />
+    <ClCompile Include="..\src\js\gui\pg\pg_grid_if.cpp" />
+    <ClCompile Include="..\src\js\gui\pg\pg_grid_manager.cpp" />
+    <ClCompile Include="..\src\js\gui\pg\pg_grid_page.cpp" />
+    <ClCompile Include="..\src\js\gui\pg\pg_init.cpp" />
+    <ClCompile Include="..\src\js\gui\pg\pg_prop.cpp" />
+    <ClCompile Include="..\src\js\gui\pg\pg_prop_array_string.cpp" />
+    <ClCompile Include="..\src\js\gui\pg\pg_prop_bool.cpp" />
+    <ClCompile Include="..\src\js\gui\pg\pg_prop_category.cpp" />
+    <ClCompile Include="..\src\js\gui\pg\pg_prop_colour.cpp" />
+    <ClCompile Include="..\src\js\gui\pg\pg_prop_date.cpp" />
+    <ClCompile Include="..\src\js\gui\pg\pg_prop_dir.cpp" />
+    <ClCompile Include="..\src\js\gui\pg\pg_prop_edit_enum.cpp" />
+    <ClCompile Include="..\src\js\gui\pg\pg_prop_enum.cpp" />
+    <ClCompile Include="..\src\js\gui\pg\pg_prop_file.cpp" />
+    <ClCompile Include="..\src\js\gui\pg\pg_prop_flags.cpp" />
+    <ClCompile Include="..\src\js\gui\pg\pg_prop_float.cpp" />
+    <ClCompile Include="..\src\js\gui\pg\pg_prop_font.cpp" />
+    <ClCompile Include="..\src\js\gui\pg\pg_prop_image_file.cpp" />
+    <ClCompile Include="..\src\js\gui\pg\pg_prop_int.cpp" />
+    <ClCompile Include="..\src\js\gui\pg\pg_prop_long_string.cpp" />
+    <ClCompile Include="..\src\js\gui\pg\pg_prop_multi_choice.cpp" />
+    <ClCompile Include="..\src\js\gui\pg\pg_prop_string.cpp" />
+    <ClCompile Include="..\src\js\gui\pg\pg_prop_system_colour.cpp" />
+    <ClCompile Include="..\src\js\gui\pg\pg_prop_uint.cpp" />
+    <ClCompile Include="..\src\js\gui\pg\pg_validation_info.cpp" />
+    <ClCompile Include="..\src\js\gui\pg\pg_wndlist.cpp" />
+    <ClCompile Include="..\src\js\gui\zzzjs_gui_init.cpp" />
+    <ClCompile Include="..\src\js\io\aistream.cpp" />
+    <ClCompile Include="..\src\js\io\aostream.cpp" />
+    <ClCompile Include="..\src\js\io\archentry.cpp" />
+    <ClCompile Include="..\src\js\io\bistream.cpp" />
+    <ClCompile Include="..\src\js\io\bostream.cpp" />
+    <ClCompile Include="..\src\js\io\constant_zzzjs_io.cpp" />
+    <ClCompile Include="..\src\js\io\costream.cpp" />
+    <ClCompile Include="..\src\js\io\dir.cpp" />
+    <ClCompile Include="..\src\js\io\dirtrav.cpp" />
+    <ClCompile Include="..\src\js\io\distream.cpp" />
+    <ClCompile Include="..\src\js\io\dostream.cpp" />
+    <ClCompile Include="..\src\js\io\ffile.cpp" />
+    <ClCompile Include="..\src\js\io\ffistream.cpp" />
+    <ClCompile Include="..\src\js\io\ffostream.cpp" />
+    <ClCompile Include="..\src\js\io\file.cpp" />
+    <ClCompile Include="..\src\js\io\filename.cpp" />
+    <ClCompile Include="..\src\js\io\fistream.cpp" />
+    <ClCompile Include="..\src\js\io\fn.cpp" />
+    <ClCompile Include="..\src\js\io\fostream.cpp" />
+    <ClCompile Include="..\src\js\io\http.cpp" />
+    <ClCompile Include="..\src\js\io\httphdr.cpp" />
+    <ClCompile Include="..\src\js\io\ipaddr.cpp" />
+    <ClCompile Include="..\src\js\io\ipv4addr.cpp" />
+    <ClCompile Include="..\src\js\io\istream.cpp" />
+    <ClCompile Include="..\src\js\io\mistream.cpp" />
+    <ClCompile Include="..\src\js\io\mostream.cpp" />
+    <ClCompile Include="..\src\js\io\ostream.cpp" />
+    <ClCompile Include="..\src\js\io\process.cpp" />
+    <ClCompile Include="..\src\js\io\protocol.cpp" />
+    <ClCompile Include="..\src\js\io\sistream.cpp" />
+    <ClCompile Include="..\src\js\io\sockaddr.cpp" />
+    <ClCompile Include="..\src\js\io\sockbase.cpp" />
+    <ClCompile Include="..\src\js\io\sockclient.cpp" />
+    <ClCompile Include="..\src\js\io\sockevth.cpp" />
+    <ClCompile Include="..\src\js\io\socksrv.cpp" />
+    <ClCompile Include="..\src\js\io\sostream.cpp" />
+    <ClCompile Include="..\src\js\io\sound.cpp" />
+    <ClCompile Include="..\src\js\io\stream.cpp" />
+    <ClCompile Include="..\src\js\io\tempfile.cpp" />
+    <ClCompile Include="..\src\js\io\textfile.cpp" />
+    <ClCompile Include="..\src\js\io\textline.cpp" />
+    <ClCompile Include="..\src\js\io\tistream.cpp" />
+    <ClCompile Include="..\src\js\io\tostream.cpp" />
+    <ClCompile Include="..\src\js\io\uri.cpp" />
+    <ClCompile Include="..\src\js\io\url.cpp" />
+    <ClCompile Include="..\src\js\io\zipentry.cpp" />
+    <ClCompile Include="..\src\js\io\zistream.cpp" />
+    <ClCompile Include="..\src\js\io\zostream.cpp" />
+    <ClCompile Include="..\src\js\io\zzzjs_io_init.cpp" />
+    <ClCompile Include="..\src\js\log\wxlog.cpp" />
+    <ClCompile Include="..\src\js\log\wxlogchain.cpp" />
+    <ClCompile Include="..\src\js\log\wxlogtext.cpp" />
+    <ClCompile Include="..\src\js\log\wxlog_init.cpp" />
+    <ClCompile Include="..\src\js\sqlite\db.cpp" />
+    <ClCompile Include="..\src\js\sqlite\stmt.cpp" />
+    <ClCompile Include="..\src\js\sqlite\zzzjs_sqlite_init.cpp" />
+    <ClCompile Include="..\src\js\xml\xml_doc.cpp" />
+    <ClCompile Include="..\src\js\xml\xml_node.cpp" />
+    <ClCompile Include="..\src\js\xml\zzzjs_xml_init.cpp" />
+    <ClCompile Include="..\src\precompile.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="libcZzzjs.vcxproj">
+      <Project>{4ff46a56-0101-48ad-b46d-ecd6f34dec3e}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

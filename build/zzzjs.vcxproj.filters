@@ -1,0 +1,1799 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="js">
+      <UniqueIdentifier>{e4c55638-13e5-4da5-8f87-c760d90ff696}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="js\common">
+      <UniqueIdentifier>{aa56555c-f5f5-4fdb-b370-4d1c9a63d3b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="js\gui">
+      <UniqueIdentifier>{1d83ea50-bbb0-4ef7-a430-bb89d0a56cd9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="js\engine">
+      <UniqueIdentifier>{f0cb267d-9839-4f1a-bdef-16ca81daa793}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="js\gui\control">
+      <UniqueIdentifier>{296df790-30e8-40bb-a393-589773439d94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="js\app">
+      <UniqueIdentifier>{1da93bbd-7898-408b-b65b-50c8721ff31e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gui">
+      <UniqueIdentifier>{8dbdd206-f82d-41e4-9ee7-b9e1a5749ad2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="js\gui\misc">
+      <UniqueIdentifier>{462a32d5-8977-413d-9d45-7d812ae91787}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="js\io">
+      <UniqueIdentifier>{ba54762e-c599-4aa1-ade0-5bc6e8ae40fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="js\gui\event">
+      <UniqueIdentifier>{6cdc0e51-433b-4938-92a4-c3cc36848997}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="js\expat">
+      <UniqueIdentifier>{5ee2b98d-b119-4d4d-b50c-15455a007403}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="js\gui\aui">
+      <UniqueIdentifier>{0d0cf565-fb05-4088-a408-99343a1a3017}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="js\gui\dataview">
+      <UniqueIdentifier>{760ea74a-8feb-40d8-b468-3a9a37a8e17a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="js\xml">
+      <UniqueIdentifier>{17312f93-1810-46b7-a9fa-87955eedf38e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="js\log">
+      <UniqueIdentifier>{6a35898e-971e-45aa-a8be-db211aa74771}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="js\gui\pg">
+      <UniqueIdentifier>{1699bb30-6af7-4439-a814-5d14c803af61}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="js\sqlite">
+      <UniqueIdentifier>{0478083f-5756-493c-a4e9-a27cdadb3ae5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="js\gui\gdi">
+      <UniqueIdentifier>{c7e9923d-9310-4411-9caa-1c342e48f36f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="js\gui\ext">
+      <UniqueIdentifier>{3fea31ab-4a32-4a77-a4f8-5485a3b9cabc}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\js\common\apiwrap.h">
+      <Filter>js\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\common\conf.h">
+      <Filter>js\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\engine\mng_inst.h">
+      <Filter>js\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\window.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\app\app.h">
+      <Filter>js\app</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\common\jsutil.h">
+      <Filter>js\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\common\defs.h">
+      <Filter>js\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\common\type.h">
+      <Filter>js\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\common\clntdata.h">
+      <Filter>js\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\common\evtconn.h">
+      <Filter>js\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\common\index.h">
+      <Filter>js\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\common\script.h">
+      <Filter>js\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\common\strsptr.h">
+      <Filter>js\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\gui\appmain.h">
+      <Filter>gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\dialog.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\ext\jsmembuf.h">
+      <Filter>js\gui\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\ext\point.h">
+      <Filter>js\gui\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\errors.h">
+      <Filter>js\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\misc\accentry.h">
+      <Filter>js\gui\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\misc\acctable.h">
+      <Filter>js\gui\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\misc\autoobj.h">
+      <Filter>js\gui\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\misc\bitmap.h">
+      <Filter>js\gui\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\misc\boxsizer.h">
+      <Filter>js\gui\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\misc\cmnconst.h">
+      <Filter>js\gui\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\misc\colour.h">
+      <Filter>js\gui\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\misc\colourdb.h">
+      <Filter>js\gui\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\misc\constant.h">
+      <Filter>js\gui\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\misc\cshelp.h">
+      <Filter>js\gui\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\misc\flexgrid.h">
+      <Filter>js\gui\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\misc\font.h">
+      <Filter>js\gui\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\misc\fontenum.h">
+      <Filter>js\gui\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\misc\fontlist.h">
+      <Filter>js\gui\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\misc\genval.h">
+      <Filter>js\gui\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\misc\globfun.h">
+      <Filter>js\gui\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\misc\gridszr.h">
+      <Filter>js\gui\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\misc\icon.h">
+      <Filter>js\gui\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\misc\image.h">
+      <Filter>js\gui\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\misc\imagelst.h">
+      <Filter>js\gui\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\misc\imghand.h">
+      <Filter>js\gui\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\misc\rect.h">
+      <Filter>js\gui\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\misc\settings.h">
+      <Filter>js\gui\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\misc\size.h">
+      <Filter>js\gui\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\misc\sizer.h">
+      <Filter>js\gui\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\misc\stsizer.h">
+      <Filter>js\gui\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\misc\textval.h">
+      <Filter>js\gui\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\misc\validate.h">
+      <Filter>js\gui\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\io\aistream.h">
+      <Filter>js\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\io\aostream.h">
+      <Filter>js\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\io\archentry.h">
+      <Filter>js\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\io\bistream.h">
+      <Filter>js\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\io\bostream.h">
+      <Filter>js\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\io\constant.h">
+      <Filter>js\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\io\costream.h">
+      <Filter>js\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\io\dir.h">
+      <Filter>js\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\io\dirtrav.h">
+      <Filter>js\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\io\distream.h">
+      <Filter>js\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\io\dostream.h">
+      <Filter>js\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\io\ffile.h">
+      <Filter>js\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\io\ffistream.h">
+      <Filter>js\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\io\ffostream.h">
+      <Filter>js\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\io\file.h">
+      <Filter>js\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\io\filename.h">
+      <Filter>js\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\io\fistream.h">
+      <Filter>js\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\io\fn.h">
+      <Filter>js\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\io\fostream.h">
+      <Filter>js\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\io\http.h">
+      <Filter>js\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\io\httphdr.h">
+      <Filter>js\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\io\ipaddr.h">
+      <Filter>js\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\io\ipv4addr.h">
+      <Filter>js\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\io\istream.h">
+      <Filter>js\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\io\jsstream.h">
+      <Filter>js\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\io\mistream.h">
+      <Filter>js\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\io\mostream.h">
+      <Filter>js\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\io\ostream.h">
+      <Filter>js\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\io\process.h">
+      <Filter>js\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\io\protocol.h">
+      <Filter>js\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\io\sistream.h">
+      <Filter>js\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\io\sockaddr.h">
+      <Filter>js\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\io\sockbase.h">
+      <Filter>js\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\io\sockclient.h">
+      <Filter>js\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\io\sockevth.h">
+      <Filter>js\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\io\socksrv.h">
+      <Filter>js\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\io\sostream.h">
+      <Filter>js\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\io\sound.h">
+      <Filter>js\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\io\stream.h">
+      <Filter>js\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\io\tempfile.h">
+      <Filter>js\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\io\textfile.h">
+      <Filter>js\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\io\textline.h">
+      <Filter>js\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\io\tistream.h">
+      <Filter>js\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\io\tostream.h">
+      <Filter>js\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\io\uri.h">
+      <Filter>js\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\io\url.h">
+      <Filter>js\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\io\zipentry.h">
+      <Filter>js\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\io\zistream.h">
+      <Filter>js\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\io\zostream.h">
+      <Filter>js\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\event\activate.h">
+      <Filter>js\gui\event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\event\cal.h">
+      <Filter>js\gui\event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\event\close.h">
+      <Filter>js\gui\event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\event\command.h">
+      <Filter>js\gui\event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\event\event.h">
+      <Filter>js\gui\event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\event\findr.h">
+      <Filter>js\gui\event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\event\help.h">
+      <Filter>js\gui\event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\event\htmllink.h">
+      <Filter>js\gui\event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\event\iconize.h">
+      <Filter>js\gui\event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\event\jsevent.h">
+      <Filter>js\gui\event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\event\key.h">
+      <Filter>js\gui\event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\event\listevt.h">
+      <Filter>js\gui\event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\event\mouse.h">
+      <Filter>js\gui\event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\event\move.h">
+      <Filter>js\gui\event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\event\notify.h">
+      <Filter>js\gui\event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\event\scroll.h">
+      <Filter>js\gui\event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\event\scrollwin.h">
+      <Filter>js\gui\event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\event\sizeevt.h">
+      <Filter>js\gui\event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\event\spinevt.h">
+      <Filter>js\gui\event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\event\split.h">
+      <Filter>js\gui\event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\event\treeevt.h">
+      <Filter>js\gui\event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\bmpbtn.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\button.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\caldate.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\calendar.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\checkbox.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\chklstbx.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\chklstbxchk.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\choice.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\coldata.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\coldlg.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\combobox.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\control.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\ctrlitem.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\dirdlg.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\filedlg.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\finddata.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\findrdlg.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\fontdata.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\fontdlg.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\frame.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\gauge.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\helpbtn.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\htmlwin.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\item.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\listbox.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\listctrl.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\listhit.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\listitattr.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\listitem.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\mdi.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\mdichild.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\menu.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\menubar.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\menuitem.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\panel.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\pwdlg.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\radiobox.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\radioboxit.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\radiobtn.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\scrollwnd.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\slider.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\spinbtn.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\spinctrl.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\splitwin.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\statbar.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\staticbx.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\sttext.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\tbartool.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\textctrl.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\toolbar.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\toplevel.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\treectrl.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\treehit.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\treeid.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\treeitem.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\txtdlg.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\engine\scrcxpriv.h">
+      <Filter>js\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\io\zzzjs_io_init.h">
+      <Filter>js\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\ext\zzzjs_ext_init.h">
+      <Filter>js\gui\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\zzzjs_gui_init.h">
+      <Filter>js\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\expat\attr.h">
+      <Filter>js\expat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\expat\parser.h">
+      <Filter>js\expat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\expat\zzzjs_expat_init.h">
+      <Filter>js\expat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\sqlite\zzzjs_sqlite_init.h">
+      <Filter>js\sqlite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\sqlite\db.h">
+      <Filter>js\sqlite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\sqlite\stmt.h">
+      <Filter>js\sqlite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\aui\auimanager.h">
+      <Filter>js\gui\aui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\aui\auipanelinfo.h">
+      <Filter>js\gui\aui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\aui\auinotebook.h">
+      <Filter>js\gui\aui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\aui\auimanagerevent.h">
+      <Filter>js\gui\aui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\aui\auinotebookevent.h">
+      <Filter>js\gui\aui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\dataview\dataviewmodel.h">
+      <Filter>js\gui\dataview</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\dataview\dataviewitem.h">
+      <Filter>js\gui\dataview</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\dataview\dataviewitemattr.h">
+      <Filter>js\gui\dataview</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\dataview\dataviewvirtuallistmodel.h">
+      <Filter>js\gui\dataview</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\dataview\dataviewctrl.h">
+      <Filter>js\gui\dataview</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\dataview\dataviewcolmn.h">
+      <Filter>js\gui\dataview</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\dataview\dataviewrender.h">
+      <Filter>js\gui\dataview</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\dataview\dataviewbitmaprender.h">
+      <Filter>js\gui\dataview</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\dataview\dataviewevent.h">
+      <Filter>js\gui\dataview</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\dataview\dataviewchoicerender.h">
+      <Filter>js\gui\dataview</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\dataview\dataviewchoicebyindexrender.h">
+      <Filter>js\gui\dataview</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\dataview\dataviewcustomrender.h">
+      <Filter>js\gui\dataview</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\dataview\dataviewspinrender.h">
+      <Filter>js\gui\dataview</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\dataview\dataviewdaterender.h">
+      <Filter>js\gui\dataview</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\dataview\dataviewicontextrender.h">
+      <Filter>js\gui\dataview</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\dataview\dataviewprogressrender.h">
+      <Filter>js\gui\dataview</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\dataview\dataviewtextrender.h">
+      <Filter>js\gui\dataview</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\dataview\dataviewtogglerender.h">
+      <Filter>js\gui\dataview</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\dataview\dataviewlistctrl.h">
+      <Filter>js\gui\dataview</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\dataview\dataviewtreestore.h">
+      <Filter>js\gui\dataview</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\dataview\dataviewindexlistmodel.h">
+      <Filter>js\gui\dataview</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\dataview\dataviewliststore.h">
+      <Filter>js\gui\dataview</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\dataview\zzzjs_gui_dataview_init.h">
+      <Filter>js\gui\dataview</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\setableheadercolumn.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\headercolumn.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\dataview\dataviewtreectrl.h">
+      <Filter>js\gui\dataview</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\aui\constant.h">
+      <Filter>js\gui\aui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\xml\xml_doc.h">
+      <Filter>js\xml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\xml\xml_node.h">
+      <Filter>js\xml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\xml\zzzjs_xml_init.h">
+      <Filter>js\xml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\log\wxlog.h">
+      <Filter>js\log</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\log\wxlogchain.h">
+      <Filter>js\log</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\log\wxlogtext.h">
+      <Filter>js\log</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\log\wxlog_init.h">
+      <Filter>js\log</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\pg\pg_prop.h">
+      <Filter>js\gui\pg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\pg\pg_cell.h">
+      <Filter>js\gui\pg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\pg\pg_validation_info.h">
+      <Filter>js\gui\pg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\pg\pg_prop_array_string.h">
+      <Filter>js\gui\pg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\pg\pg_prop_bool.h">
+      <Filter>js\gui\pg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\pg\pg_prop_date.h">
+      <Filter>js\gui\pg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\pg\pg_choice_entry.h">
+      <Filter>js\gui\pg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\pg\pg_choices.h">
+      <Filter>js\gui\pg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\pg\pg_prop_enum.h">
+      <Filter>js\gui\pg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\pg\pg_prop_edit_enum.h">
+      <Filter>js\gui\pg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\pg\pg_prop_system_colour.h">
+      <Filter>js\gui\pg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\pg\pg_colour_property_value.h">
+      <Filter>js\gui\pg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\pg\pg_prop_colour.h">
+      <Filter>js\gui\pg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\pg\pg_prop_file.h">
+      <Filter>js\gui\pg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\pg\pg_prop_image_file.h">
+      <Filter>js\gui\pg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\pg\pg_prop_flags.h">
+      <Filter>js\gui\pg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\pg\pg_prop_float.h">
+      <Filter>js\gui\pg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\pg\pg_prop_font.h">
+      <Filter>js\gui\pg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\pg\pg_prop_long_string.h">
+      <Filter>js\gui\pg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\pg\pg_prop_dir.h">
+      <Filter>js\gui\pg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\pg\pg_prop_multi_choice.h">
+      <Filter>js\gui\pg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\pg\pg_prop_category.h">
+      <Filter>js\gui\pg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\pg\pg_prop_string.h">
+      <Filter>js\gui\pg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\pg\pg_prop_uint.h">
+      <Filter>js\gui\pg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\pg\pg_grid_page.h">
+      <Filter>js\gui\pg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\pg\pg_grid_if.h">
+      <Filter>js\gui\pg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\pg\pg_grid_manager.h">
+      <Filter>js\gui\pg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\pg\pg_grid.h">
+      <Filter>js\gui\pg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\pg\pg_arg_id.h">
+      <Filter>js\gui\pg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\pg\pg_evt_grid.h">
+      <Filter>js\gui\pg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\pg\pg_init.h">
+      <Filter>js\gui\pg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\pg\pg_prop_int.h">
+      <Filter>js\gui\pg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\ext\locale.h">
+      <Filter>js\gui\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\pg\pg_editor.h">
+      <Filter>js\gui\pg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\pg\pg_wndlist.h">
+      <Filter>js\gui\pg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\misc\brush.h">
+      <Filter>js\gui\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\misc\pen.h">
+      <Filter>js\gui\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\gdi\dc.h">
+      <Filter>js\gui\gdi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\gdi\gcdc.h">
+      <Filter>js\gui\gdi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\gdi\memory_dc.h">
+      <Filter>js\gui\gdi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\gdi\buffered_dc.h">
+      <Filter>js\gui\gdi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\gdi\buffered_paint_dc.h">
+      <Filter>js\gui\gdi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\gdi\auto_buffered_paint_dc.h">
+      <Filter>js\gui\gdi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\gdi\metafile.h">
+      <Filter>js\gui\gdi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\gdi\metafile_dc.h">
+      <Filter>js\gui\gdi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\gdi\mirror_dc.h">
+      <Filter>js\gui\gdi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\gdi\screen_dc.h">
+      <Filter>js\gui\gdi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\gdi\window_dc.h">
+      <Filter>js\gui\gdi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\gdi\client_dc.h">
+      <Filter>js\gui\gdi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\gdi\paint_dc.h">
+      <Filter>js\gui\gdi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\gdi\gdi_init.h">
+      <Filter>js\gui\gdi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\event\evt_paint.h">
+      <Filter>js\gui\event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\misc\mask.h">
+      <Filter>js\gui\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\misc\pallet.h">
+      <Filter>js\gui\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\misc\art_provider.h">
+      <Filter>js\gui\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\common\jswrap.h">
+      <Filter>js\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\misc\region.h">
+      <Filter>js\gui\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\bookctrlbase.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\notebook.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\event\bookctrlevt.h">
+      <Filter>js\gui\event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\treebook.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\toolbook.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\simplebook.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\listbook.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\gui\control\choicebook.h">
+      <Filter>js\gui\control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\precompile.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\js\common\conf.cpp">
+      <Filter>js\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\engine\mng_inst.cpp">
+      <Filter>js\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\window.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\app\app.cpp">
+      <Filter>js\app</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\common\jsutil.cpp">
+      <Filter>js\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\common\type.cpp">
+      <Filter>js\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\common\script.cpp">
+      <Filter>js\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\gui\appmain.cpp">
+      <Filter>gui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\dialog.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\ext\jsmembuf.cpp">
+      <Filter>js\gui\ext</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\ext\point.cpp">
+      <Filter>js\gui\ext</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\errors.cpp">
+      <Filter>js\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\misc\accentry.cpp">
+      <Filter>js\gui\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\misc\acctable.cpp">
+      <Filter>js\gui\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\misc\autoobj.cpp">
+      <Filter>js\gui\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\misc\bitmap.cpp">
+      <Filter>js\gui\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\misc\bmphdlr.cpp">
+      <Filter>js\gui\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\misc\boxsizer.cpp">
+      <Filter>js\gui\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\misc\colour.cpp">
+      <Filter>js\gui\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\misc\colourdb.cpp">
+      <Filter>js\gui\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\misc\cshelp.cpp">
+      <Filter>js\gui\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\misc\flexgrid.cpp">
+      <Filter>js\gui\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\misc\font.cpp">
+      <Filter>js\gui\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\misc\fontenum.cpp">
+      <Filter>js\gui\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\misc\fontlist.cpp">
+      <Filter>js\gui\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\misc\genval.cpp">
+      <Filter>js\gui\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\misc\gifhdlr.cpp">
+      <Filter>js\gui\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\misc\globfun.cpp">
+      <Filter>js\gui\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\misc\gridszr.cpp">
+      <Filter>js\gui\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\misc\icohdlr.cpp">
+      <Filter>js\gui\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\misc\icon.cpp">
+      <Filter>js\gui\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\misc\image.cpp">
+      <Filter>js\gui\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\misc\imagelst.cpp">
+      <Filter>js\gui\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\misc\imghand.cpp">
+      <Filter>js\gui\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\misc\jpghdlr.cpp">
+      <Filter>js\gui\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\misc\pcxhdlr.cpp">
+      <Filter>js\gui\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\misc\pnghdlr.cpp">
+      <Filter>js\gui\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\misc\pnmhdlr.cpp">
+      <Filter>js\gui\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\misc\rect.cpp">
+      <Filter>js\gui\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\misc\settings.cpp">
+      <Filter>js\gui\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\misc\size.cpp">
+      <Filter>js\gui\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\misc\sizer.cpp">
+      <Filter>js\gui\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\misc\stsizer.cpp">
+      <Filter>js\gui\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\misc\textval.cpp">
+      <Filter>js\gui\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\misc\tiffhdlr.cpp">
+      <Filter>js\gui\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\misc\validator.cpp">
+      <Filter>js\gui\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\misc\xpmhdlr.cpp">
+      <Filter>js\gui\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\io\aistream.cpp">
+      <Filter>js\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\io\aostream.cpp">
+      <Filter>js\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\io\archentry.cpp">
+      <Filter>js\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\io\bistream.cpp">
+      <Filter>js\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\io\bostream.cpp">
+      <Filter>js\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\io\costream.cpp">
+      <Filter>js\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\io\dir.cpp">
+      <Filter>js\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\io\dirtrav.cpp">
+      <Filter>js\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\io\distream.cpp">
+      <Filter>js\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\io\dostream.cpp">
+      <Filter>js\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\io\ffile.cpp">
+      <Filter>js\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\io\ffistream.cpp">
+      <Filter>js\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\io\ffostream.cpp">
+      <Filter>js\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\io\file.cpp">
+      <Filter>js\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\io\filename.cpp">
+      <Filter>js\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\io\fistream.cpp">
+      <Filter>js\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\io\fn.cpp">
+      <Filter>js\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\io\fostream.cpp">
+      <Filter>js\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\io\http.cpp">
+      <Filter>js\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\io\httphdr.cpp">
+      <Filter>js\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\io\ipaddr.cpp">
+      <Filter>js\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\io\ipv4addr.cpp">
+      <Filter>js\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\io\istream.cpp">
+      <Filter>js\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\io\mistream.cpp">
+      <Filter>js\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\io\mostream.cpp">
+      <Filter>js\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\io\ostream.cpp">
+      <Filter>js\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\io\process.cpp">
+      <Filter>js\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\io\protocol.cpp">
+      <Filter>js\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\io\sistream.cpp">
+      <Filter>js\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\io\sockaddr.cpp">
+      <Filter>js\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\io\sockbase.cpp">
+      <Filter>js\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\io\sockclient.cpp">
+      <Filter>js\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\io\sockevth.cpp">
+      <Filter>js\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\io\socksrv.cpp">
+      <Filter>js\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\io\sostream.cpp">
+      <Filter>js\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\io\sound.cpp">
+      <Filter>js\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\io\stream.cpp">
+      <Filter>js\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\io\tempfile.cpp">
+      <Filter>js\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\io\textfile.cpp">
+      <Filter>js\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\io\textline.cpp">
+      <Filter>js\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\io\tistream.cpp">
+      <Filter>js\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\io\tostream.cpp">
+      <Filter>js\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\io\uri.cpp">
+      <Filter>js\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\io\url.cpp">
+      <Filter>js\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\io\zipentry.cpp">
+      <Filter>js\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\io\zistream.cpp">
+      <Filter>js\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\io\zostream.cpp">
+      <Filter>js\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\event\activate.cpp">
+      <Filter>js\gui\event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\event\cal.cpp">
+      <Filter>js\gui\event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\event\close.cpp">
+      <Filter>js\gui\event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\event\command.cpp">
+      <Filter>js\gui\event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\event\event.cpp">
+      <Filter>js\gui\event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\event\findr.cpp">
+      <Filter>js\gui\event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\event\focus.cpp">
+      <Filter>js\gui\event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\event\help.cpp">
+      <Filter>js\gui\event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\event\htmllink.cpp">
+      <Filter>js\gui\event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\event\iconize.cpp">
+      <Filter>js\gui\event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\event\initdlg.cpp">
+      <Filter>js\gui\event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\event\jsevent.cpp">
+      <Filter>js\gui\event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\event\key.cpp">
+      <Filter>js\gui\event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\event\listevt.cpp">
+      <Filter>js\gui\event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\event\maximize.cpp">
+      <Filter>js\gui\event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\event\mouse.cpp">
+      <Filter>js\gui\event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\event\move.cpp">
+      <Filter>js\gui\event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\event\notify.cpp">
+      <Filter>js\gui\event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\event\scroll.cpp">
+      <Filter>js\gui\event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\event\scrollwin.cpp">
+      <Filter>js\gui\event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\event\sizeevt.cpp">
+      <Filter>js\gui\event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\event\spinevt.cpp">
+      <Filter>js\gui\event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\event\split.cpp">
+      <Filter>js\gui\event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\event\syscol.cpp">
+      <Filter>js\gui\event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\event\treeevt.cpp">
+      <Filter>js\gui\event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\bmpbtn.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\button.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\caldate.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\calendar.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\checkbox.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\chklstbx.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\chklstbxchk.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\choice.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\coldata.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\coldlg.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\combobox.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\control.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\ctrlitem.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\dirdlg.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\filedlg.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\finddata.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\findrdlg.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\fontdata.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\fontdlg.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\frame.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\gauge.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\helpbtn.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\htmlwin.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\item.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\listbox.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\listctrl.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\listhit.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\listitattr.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\listitem.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\mdi.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\mdichild.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\menu.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\menubar.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\menuitem.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\panel.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\pwdlg.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\radiobox.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\radioboxit.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\radiobtn.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\scrollwnd.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\slider.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\spinbtn.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\spinctrl.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\splitwin.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\statbar.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\staticbx.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\sttext.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\tbartool.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\textctrl.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\toolbar.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\toplevel.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\treectrl.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\treehit.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\treeid.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\treeitem.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\txtdlg.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\engine\scrcxpriv.cpp">
+      <Filter>js\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\io\zzzjs_io_init.cpp">
+      <Filter>js\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\ext\zzzjs_ext_init.cpp">
+      <Filter>js\gui\ext</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\zzzjs_gui_init.cpp">
+      <Filter>js\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\io\constant_zzzjs_io.cpp">
+      <Filter>js\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\misc\cmnconst.cpp">
+      <Filter>js\gui\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\misc\constant_zzzjs_gui_misc.cpp">
+      <Filter>js\gui\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\expat\attr.cpp">
+      <Filter>js\expat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\expat\parser.cpp">
+      <Filter>js\expat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\expat\zzzjs_expat_init.cpp">
+      <Filter>js\expat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\sqlite\db.cpp">
+      <Filter>js\sqlite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\sqlite\stmt.cpp">
+      <Filter>js\sqlite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\sqlite\zzzjs_sqlite_init.cpp">
+      <Filter>js\sqlite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\aui\auimanager.cpp">
+      <Filter>js\gui\aui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\aui\auipanelinfo.cpp">
+      <Filter>js\gui\aui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\aui\auinotebook.cpp">
+      <Filter>js\gui\aui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\aui\auimanagerevent.cpp">
+      <Filter>js\gui\aui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\aui\auinotebookevent.cpp">
+      <Filter>js\gui\aui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\dataview\dataviewmodel.cpp">
+      <Filter>js\gui\dataview</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\dataview\dataviewitem.cpp">
+      <Filter>js\gui\dataview</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\dataview\dataviewitemattr.cpp">
+      <Filter>js\gui\dataview</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\dataview\dataviewvirtuallistmodel.cpp">
+      <Filter>js\gui\dataview</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\dataview\dataviewctrl.cpp">
+      <Filter>js\gui\dataview</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\dataview\dataviewcolmn.cpp">
+      <Filter>js\gui\dataview</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\dataview\dataviewrender.cpp">
+      <Filter>js\gui\dataview</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\dataview\dataviewbitmaprender.cpp">
+      <Filter>js\gui\dataview</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\dataview\dataviewevent.cpp">
+      <Filter>js\gui\dataview</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\dataview\dataviewchoicerender.cpp">
+      <Filter>js\gui\dataview</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\dataview\dataviewchoicebyindexrender.cpp">
+      <Filter>js\gui\dataview</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\dataview\dataviewcustomrender.cpp">
+      <Filter>js\gui\dataview</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\dataview\dataviewspinrender.cpp">
+      <Filter>js\gui\dataview</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\dataview\dataviewdaterender.cpp">
+      <Filter>js\gui\dataview</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\dataview\dataviewicontextrender.cpp">
+      <Filter>js\gui\dataview</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\dataview\dataviewprogressrender.cpp">
+      <Filter>js\gui\dataview</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\dataview\dataviewtextrender.cpp">
+      <Filter>js\gui\dataview</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\dataview\dataviewtogglerender.cpp">
+      <Filter>js\gui\dataview</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\dataview\dataviewlistctrl.cpp">
+      <Filter>js\gui\dataview</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\dataview\dataviewtreestore.cpp">
+      <Filter>js\gui\dataview</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\dataview\dataviewindexlistmodel.cpp">
+      <Filter>js\gui\dataview</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\dataview\dataviewliststore.cpp">
+      <Filter>js\gui\dataview</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\dataview\zzzjs_gui_dataview_init.cpp">
+      <Filter>js\gui\dataview</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\setableheadercolumn.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\headercolumn.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\dataview\dataviewtreectrl.cpp">
+      <Filter>js\gui\dataview</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\aui\aui_define_constant.cpp">
+      <Filter>js\gui\aui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\xml\xml_doc.cpp">
+      <Filter>js\xml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\xml\xml_node.cpp">
+      <Filter>js\xml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\xml\zzzjs_xml_init.cpp">
+      <Filter>js\xml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\log\wxlog.cpp">
+      <Filter>js\log</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\log\wxlogchain.cpp">
+      <Filter>js\log</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\log\wxlogtext.cpp">
+      <Filter>js\log</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\log\wxlog_init.cpp">
+      <Filter>js\log</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\pg\pg_prop.cpp">
+      <Filter>js\gui\pg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\pg\pg_cell.cpp">
+      <Filter>js\gui\pg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\pg\pg_validation_info.cpp">
+      <Filter>js\gui\pg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\pg\pg_prop_array_string.cpp">
+      <Filter>js\gui\pg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\pg\pg_prop_bool.cpp">
+      <Filter>js\gui\pg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\pg\pg_prop_date.cpp">
+      <Filter>js\gui\pg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\pg\pg_choice_entry.cpp">
+      <Filter>js\gui\pg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\pg\pg_choices.cpp">
+      <Filter>js\gui\pg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\pg\pg_prop_enum.cpp">
+      <Filter>js\gui\pg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\pg\pg_prop_edit_enum.cpp">
+      <Filter>js\gui\pg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\pg\pg_prop_system_colour.cpp">
+      <Filter>js\gui\pg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\pg\pg_colour_property_value.cpp">
+      <Filter>js\gui\pg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\pg\pg_prop_colour.cpp">
+      <Filter>js\gui\pg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\pg\pg_prop_file.cpp">
+      <Filter>js\gui\pg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\pg\pg_prop_image_file.cpp">
+      <Filter>js\gui\pg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\pg\pg_prop_flags.cpp">
+      <Filter>js\gui\pg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\pg\pg_prop_float.cpp">
+      <Filter>js\gui\pg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\pg\pg_prop_font.cpp">
+      <Filter>js\gui\pg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\pg\pg_prop_long_string.cpp">
+      <Filter>js\gui\pg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\pg\pg_prop_dir.cpp">
+      <Filter>js\gui\pg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\pg\pg_prop_multi_choice.cpp">
+      <Filter>js\gui\pg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\pg\pg_prop_category.cpp">
+      <Filter>js\gui\pg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\pg\pg_prop_string.cpp">
+      <Filter>js\gui\pg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\pg\pg_prop_uint.cpp">
+      <Filter>js\gui\pg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\pg\pg_grid_page.cpp">
+      <Filter>js\gui\pg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\pg\pg_grid_if.cpp">
+      <Filter>js\gui\pg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\pg\pg_grid_manager.cpp">
+      <Filter>js\gui\pg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\pg\pg_grid.cpp">
+      <Filter>js\gui\pg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\pg\pg_arg_id.cpp">
+      <Filter>js\gui\pg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\pg\pg_evt_grid.cpp">
+      <Filter>js\gui\pg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\pg\pg_init.cpp">
+      <Filter>js\gui\pg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\pg\pg_prop_int.cpp">
+      <Filter>js\gui\pg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\ext\locale.cpp">
+      <Filter>js\gui\ext</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\pg\pg_editor.cpp">
+      <Filter>js\gui\pg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\pg\pg_wndlist.cpp">
+      <Filter>js\gui\pg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\misc\brush.cpp">
+      <Filter>js\gui\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\misc\pen.cpp">
+      <Filter>js\gui\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\gdi\dc.cpp">
+      <Filter>js\gui\gdi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\gdi\gcdc.cpp">
+      <Filter>js\gui\gdi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\gdi\memory_dc.cpp">
+      <Filter>js\gui\gdi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\gdi\buffered_dc.cpp">
+      <Filter>js\gui\gdi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\gdi\buffered_paint_dc.cpp">
+      <Filter>js\gui\gdi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\gdi\auto_buffered_paint_dc.cpp">
+      <Filter>js\gui\gdi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\gdi\metafile.cpp">
+      <Filter>js\gui\gdi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\gdi\metafile_dc.cpp">
+      <Filter>js\gui\gdi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\gdi\mirror_dc.cpp">
+      <Filter>js\gui\gdi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\gdi\screen_dc.cpp">
+      <Filter>js\gui\gdi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\gdi\window_dc.cpp">
+      <Filter>js\gui\gdi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\gdi\client_dc.cpp">
+      <Filter>js\gui\gdi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\gdi\paint_dc.cpp">
+      <Filter>js\gui\gdi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\gdi\gdi_init.cpp">
+      <Filter>js\gui\gdi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\event\evt_paint.cpp">
+      <Filter>js\gui\event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\misc\mask.cpp">
+      <Filter>js\gui\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\misc\pallet.cpp">
+      <Filter>js\gui\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\misc\art_provider.cpp">
+      <Filter>js\gui\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\misc\region.cpp">
+      <Filter>js\gui\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\bookctrlbase.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\notebook.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\event\bookctrlevt.cpp">
+      <Filter>js\gui\event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\treebook.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\toolbook.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\simplebook.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\listbook.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\gui\control\choicebook.cpp">
+      <Filter>js\gui\control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\precompile.cpp" />
+  </ItemGroup>
+</Project>

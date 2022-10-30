@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="expat_src">
+      <UniqueIdentifier>{0c6ba6c5-7748-4a54-b65c-dfd62a9f67a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sqlite_src">
+      <UniqueIdentifier>{7cf8c6a4-5785-4e8d-bdf4-ab694b04b498}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\js\expat\expat_src\amigaconfig.h">
+      <Filter>expat_src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\expat\expat_src\ascii.h">
+      <Filter>expat_src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\expat\expat_src\asciitab.h">
+      <Filter>expat_src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\expat\expat_src\expat.h">
+      <Filter>expat_src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\expat\expat_src\expat_config.h">
+      <Filter>expat_src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\expat\expat_src\expat_external.h">
+      <Filter>expat_src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\expat\expat_src\iasciitab.h">
+      <Filter>expat_src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\expat\expat_src\internal.h">
+      <Filter>expat_src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\expat\expat_src\latin1tab.h">
+      <Filter>expat_src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\expat\expat_src\macconfig.h">
+      <Filter>expat_src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\expat\expat_src\nametab.h">
+      <Filter>expat_src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\expat\expat_src\utf8tab.h">
+      <Filter>expat_src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\expat\expat_src\winconfig.h">
+      <Filter>expat_src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\expat\expat_src\xmlrole.h">
+      <Filter>expat_src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\expat\expat_src\xmltok.h">
+      <Filter>expat_src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\expat\expat_src\xmltok_impl.h">
+      <Filter>expat_src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\sqlite\sqlite_src\sqlite3.h">
+      <Filter>sqlite_src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\sqlite\sqlite_src\sqlite3ext.h">
+      <Filter>sqlite_src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\expat\expat_src\xmltok_ns.c">
+      <Filter>expat_src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\js\expat\expat_src\xmltok_impl.c">
+      <Filter>expat_src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\js\expat\expat_src\xmlparse.c">
+      <Filter>expat_src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\expat\expat_src\xmlrole.c">
+      <Filter>expat_src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\expat\expat_src\xmltok.c">
+      <Filter>expat_src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\js\sqlite\sqlite_src\sqlite3.c">
+      <Filter>sqlite_src</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,2008 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<obj>
+  <settings>
+    <java xml_elm="ZzzPimXmlElm" stream_type="Stream" db_cursor="" db_statement="">
+      <pre_sentence>
+        <![CDATA[
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Date;
+import yyys.zzz.pim.xml.*;
+import yyys.zzz.pim.db.*;
+]]>
+      </pre_sentence>
+      <package>yyys.zzz.pim.bean.srp</package>
+    </java>
+    <c string_type="XStrBuff" date_type="XTime" string_use_c_str="no" c_byte_array_type="XBuff" c_long_type="XD_INT8" c_ulong_type="XD_UINT8" xml_elm="wxXmlNode*" stream_type="std::ostream" exception="XExcept" db_cursor="DbCursor" db_statement="DbStmt">
+      <ch>
+        <pre_sentence>
+          <![CDATA[]]>
+        </pre_sentence>
+        <pre_sentence>
+          <![CDATA[#include "xlib/xarray.h"
+#include "xlib/xtime.h"
+#include "xlib/xeception.h"
+#include "xlib/xstrbuff.h"
+#include "xlib/xbuff.h"
+#include <vector>
+#ifdef __DATA_IMPORT_EXPORT_SUPPORT__
+class wxXmlNode;
+#endif /*__DATA_IMPORT_EXPORT_SUPPORT__*/
+#ifdef __DATA_STREAM_SUPPORT__
+#include <ostream>
+#endif /*__DATA_STREAM_SUPPORT__*/
+#include "data/srp/DataSrpBase.h"
+using namespace std;
+
+
+]]>
+        </pre_sentence>
+      </ch>
+      <cpp>
+        <func_term_define>XEXCEPT_EXIT</func_term_define>
+        <func_pre_define>XEXCEPT_ENTRY</func_pre_define>
+        <include_base>data/srp</include_base>
+      </cpp>
+    </c>
+  </settings>
+  <class serializeKey="134406706585859" name="DataSrpBase" table="DataSrpBase" extern="" xml_tag="" is_xml="true" is_db_table="false" is_stream="true">
+    <desc>
+      <![CDATA[データクラスのベースクラス]]>
+    </desc>
+    <enum name="OBJ_TYPE">
+      <desc>
+        <![CDATA[オブジェクトタイプ]]>
+      </desc>
+      <enum_val name="SRP_ROOT_TYPE" val="0">
+        <desc>
+          <![CDATA[Rootオブジェクトタイプ DataSrpRoot]]>
+        </desc>
+      </enum_val>
+      <enum_val name="SRP_SITE" val="1">
+        <desc>
+          <![CDATA[サイトデータ DataSrpSite]]>
+        </desc>
+      </enum_val>
+      <enum_val name="SRP_SI" val="2">
+        <desc>
+          <![CDATA[文章アイテム DataSrpSi]]>
+        </desc>
+      </enum_val>
+      <enum_val name="SRP_FILE" val="3">
+        <desc>
+          <![CDATA[ファイルデータ DataSrpFile]]>
+        </desc>
+      </enum_val>
+      <enum_val name="SRP_CHOICE_CAT" val="4">
+        <desc>
+          <![CDATA[選択肢カテゴリーデータ DataSrpChoiceCat]]>
+        </desc>
+      </enum_val>
+      <enum_val name="SRP_CHOICE_GRP" val="5">
+        <desc>
+          <![CDATA[選択肢グループデータ DataSrpChoiceGrp]]>
+        </desc>
+      </enum_val>
+      <enum_val name="SRP_CHOICE_ITEM" val="6">
+        <desc>
+          <![CDATA[選択肢アイテムデータ DataSrpChoiceItem]]>
+        </desc>
+      </enum_val>
+      <enum_val name="SRP_CHARA_CAT" val="7">
+        <desc>
+          <![CDATA[個性カテゴリーデータ DataSrpCharaCat]]>
+        </desc>
+      </enum_val>
+      <enum_val name="SRP_CHARA_GRP" val="8">
+        <desc>
+          <![CDATA[個性グループデータ DataSrpCharaGrp]]>
+        </desc>
+      </enum_val>
+      <enum_val name="SRP_CHARA_ITEM" val="9">
+        <desc>
+          <![CDATA[個性アイテムデータ DataSrpCharaItem]]>
+        </desc>
+      </enum_val>
+      <enum_val name="SRP_ACTION_CAT" val="10">
+        <desc>
+          <![CDATA[行動カテゴリーデータ DataSrpActionCat]]>
+        </desc>
+      </enum_val>
+      <enum_val name="SRP_ACTION_GRP" val="11">
+        <desc>
+          <![CDATA[行動グループデータ DataSrpActionGrp]]>
+        </desc>
+      </enum_val>
+      <enum_val name="SRP_ACTION_ITEM" val="12">
+        <desc>
+          <![CDATA[行動アイテムデータ DataSrpActionItem]]>
+        </desc>
+      </enum_val>
+      <enum_val name="SRP_SCRAP_CAT" val="13">
+        <desc>
+          <![CDATA[スクラップカテゴリーデータ DataSrpScrapCat]]>
+        </desc>
+      </enum_val>
+      <enum_val name="SRP_SCRAP_GRP" val="14">
+        <desc>
+          <![CDATA[スクラップグループデータ DataSrpScrapGrp]]>
+        </desc>
+      </enum_val>
+      <enum_val name="SRP_SCRAP_ITEM" val="15">
+        <desc>
+          <![CDATA[スクラップアイテムデータ DataSrpScrapItem]]>
+        </desc>
+      </enum_val>
+      <enum_val name="SRP_CHK_CAT" val="16">
+        <desc>
+          <![CDATA[チェックカテゴリーデータ DataSrpChkCat]]>
+        </desc>
+      </enum_val>
+      <enum_val name="SRP_CHK_GRP" val="17">
+        <desc>
+          <![CDATA[チェックグループデータ DataSrpChkGrp]]>
+        </desc>
+      </enum_val>
+      <enum_val name="SRP_CHK_ITEM" val="18">
+        <desc>
+          <![CDATA[チェックアイテムデータ DataSrpChkItem]]>
+        </desc>
+      </enum_val>
+      <enum_val name="SRP_TAG" val="19">
+        <desc>
+          <![CDATA[スクラップタグ DataSrpTag]]>
+        </desc>
+      </enum_val>
+      <enum_val name="SRP_BOOKSHELF" val="20">
+        <desc>
+          <![CDATA[本棚データ DataSrpBookShelf]]>
+        </desc>
+      </enum_val>
+      <enum_val name="SRP_BOOK" val="21">
+        <desc>
+          <![CDATA[本データ DataSrpBook]]>
+        </desc>
+      </enum_val>
+      <enum_val name="SRP_CHAPTER" val="22">
+        <desc>
+          <![CDATA[章データ DataSrpChapter]]>
+        </desc>
+      </enum_val>
+      <enum_val name="SRP_STC_SIMPLE" val="23">
+        <desc>
+          <![CDATA[シンプルデータ DataSrpStcSimple]]>
+        </desc>
+      </enum_val>
+      <enum_val name="SRP_STC_QUESTION" val="24">
+        <desc>
+          <![CDATA[問題データ DataSrpStcQuestion]]>
+        </desc>
+      </enum_val>
+      <enum_val name="SRP_STC_WORD" val="25">
+        <desc>
+          <![CDATA[単語データ DataSrpStcWord]]>
+        </desc>
+      </enum_val>
+      <enum_val name="SRP_STC_CHECK" val="26">
+        <desc>
+          <![CDATA[チェックデータ DataSrpStcCheck]]>
+        </desc>
+      </enum_val>
+      <enum_val name="SRP_STC_QUESTION_ANS" val="27">
+        <desc>
+          <![CDATA[問題回答データ DataSrpStcQuestionAns]]>
+        </desc>
+      </enum_val>
+      <enum_val name="SRP_STC_QUESTION_SPINNER" val="28">
+        <desc>
+          <![CDATA[問題回答選択肢データ DataSrpStcQuestionSpinner]]>
+        </desc>
+      </enum_val>
+      <enum_val name="SRP_TAG_OBJ" val="29">
+        <desc>
+          <![CDATA[タグとオブジェクトの関連づけデータ DataSrpTagObj]]>
+        </desc>
+      </enum_val>
+      <enum_val name="SRP_LINK_OBJ" val="30">
+        <desc>
+          <![CDATA[オブジェクトのリンクデータ DataSrpLinkObj]]>
+        </desc>
+      </enum_val>
+      <enum_val name="SRP_DELETE" val="31">
+        <desc>
+          <![CDATA[オブジェクトの削除データ DataSrpDeleteObj]]>
+        </desc>
+      </enum_val>
+      <enum_val name="SRP_INLINE_HTML" val="100">
+        <desc>
+          <![CDATA[インラインHTMLデータ DataSrpInlineHemlDataItem]]>
+        </desc>
+      </enum_val>
+      <enum_val name="SRP_IMPORT_HST">
+        <desc>
+          <![CDATA[インポート履歴データ DataSrpImportHst]]>
+        </desc>
+      </enum_val>
+      <enum_val name="SRP_EXPORT_HST">
+        <desc>
+          <![CDATA[エクスポート履歴データ DataSrpExportHst]]>
+        </desc>
+      </enum_val>
+      <enum_val name="SRP_ANY" val="999">
+        <desc>
+          <![CDATA[オブジェクトを特定しない操作用タイプ]]>
+        </desc>
+      </enum_val>
+    </enum>
+    <constructs>
+      <construct>
+        <params>
+          <param name="" param_type="3" val_type="DataSrpBase" val="parent">
+            <desc>
+              <![CDATA[]]>
+            </desc>
+          </param>
+          <param name="" param_type="3" val_type="DataSrpBase" val="obj_type">
+            <desc>
+              <![CDATA[]]>
+            </desc>
+          </param>
+        </params>
+      </construct>
+    </constructs>
+    <member field="obj_type" type="enum" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="get" obj_role="new" ref_enum="DataSrpBase.OBJ_TYPE" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[オブジェクトタイプ]]>
+      </desc>
+    </member>
+    <member field="parent" type="object" xml_elm="yes" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="get" obj_role="ref_ptr" class="DataSrpBase" date_db_long="no" is_db_field="no" modify_check="yes">
+      <desc>
+        <![CDATA[親オブジェクト]]>
+      </desc>
+    </member>
+    <member field="loaded" type="bool" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="no">
+      <desc>
+        <![CDATA[ロード済]]>
+      </desc>
+    </member>
+    <func name="newObject" attr="static">
+      <desc>
+        <![CDATA[オブジェクトのインスタンスを作成。]]>
+      </desc>
+      <params>
+        <param name="" param_type="3" val_type="DataSrpBase" val="parent">
+          <desc>
+            <![CDATA[]]>
+          </desc>
+        </param>
+        <param name="" param_type="3" val_type="DataSrpBase" val="obj_type">
+          <desc>
+            <![CDATA[]]>
+          </desc>
+        </param>
+        <param name="" param_type="3" val_type="DataSrpBaseValue" val="id">
+          <desc>
+            <![CDATA[]]>
+          </desc>
+        </param>
+      </params>
+      <return name="" param_type="50" val_type="DataSrpBase" attr="pointer">
+        <desc>
+          <![CDATA[≠NULL 成功]]>
+        </desc>
+        <return>
+          <![CDATA[≠NULL 成功]]>
+        </return>
+      </return>
+      <codes>
+        <code lang="c">
+          <![CDATA[int i = 0;
+for(i = 0; i < 100; i++) 
+{
+	printf("%i\n", i);
+}
+return DataSrpBase.SRP_ROOT_TYPE;]]>
+        </code>
+        <code lang="java">
+          <![CDATA[return DataSrpBase.OBJ_TYPE.SRP_ROOT_TYPE;]]>
+        </code>
+      </codes>
+    </func>
+    <func name="delObject" attr="static">
+      <desc>
+        <![CDATA[オブジェクトのインスタンスを開放]]>
+      </desc>
+      <params>
+        <param name="" param_type="3" val_type="DataSrpBase" val="parent">
+          <desc>
+            <![CDATA[]]>
+          </desc>
+        </param>
+      </params>
+      <return name="" param_type="0" val_type="void">
+        <desc>
+          <![CDATA[]]>
+        </desc>
+        <return>
+          <![CDATA[]]>
+        </return>
+      </return>
+      <codes>
+        <code lang="c">
+          <![CDATA[return DataSrpBase.SRP_ROOT_TYPE;]]>
+        </code>
+        <code lang="java">
+          <![CDATA[return DataSrpBase.OBJ_TYPE.SRP_ROOT_TYPE;]]>
+        </code>
+      </codes>
+    </func>
+  </class>
+  <class serializeKey="71086003738107" name="DataSrpRoot" table="SRP_ROOT_TYPE" extern="DataSrpBase" xml_tag="" is_xml="true" is_db_table="false" is_stream="true">
+    <desc>
+      <![CDATA[Rootオブジェクトタイプ]]>
+    </desc>
+    <constructs>
+      <construct/>
+    </constructs>
+    <member field="site" type="OBJ_ARRAY" xml_tag="site" xml_elm="yes" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpSite" date_db_long="no" is_db_field="no" modify_check="no">
+      <desc>
+        <![CDATA[サイト一覧]]>
+      </desc>
+    </member>
+    <member field="mem_file" type="OBJ_ARRAY" xml_elm="yes" xml_cdata="no" xml_enable="no" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpFile" date_db_long="no" is_db_field="no" modify_check="no">
+      <desc>
+        <![CDATA[ファイルデータ]]>
+      </desc>
+    </member>
+    <member field="mem_si" type="OBJ_ARRAY" xml_tag="mem_si" xml_elm="yes" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpSi" date_db_long="no" is_db_field="no" modify_check="no">
+      <desc>
+        <![CDATA[文章アイテム]]>
+      </desc>
+    </member>
+    <member field="mem_choice_cat" type="OBJ_ARRAY" xml_elm="yes" xml_cdata="no" xml_enable="no" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpChoiceCat" date_db_long="no" is_db_field="no" modify_check="no">
+      <desc>
+        <![CDATA[選択肢カテゴリーデータ]]>
+      </desc>
+    </member>
+    <member field="mem_choice_grp" type="OBJ_ARRAY" xml_elm="yes" xml_cdata="no" xml_enable="no" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpChoiceGrp" date_db_long="no" is_db_field="no" modify_check="no">
+      <desc>
+        <![CDATA[選択肢グループデータ]]>
+      </desc>
+    </member>
+    <member field="mem_choice_item" type="OBJ_ARRAY" xml_elm="yes" xml_cdata="no" xml_enable="no" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpChoiceItem" date_db_long="no" is_db_field="no" modify_check="no">
+      <desc>
+        <![CDATA[選択肢アイテムデータ]]>
+      </desc>
+    </member>
+    <member field="mem_chara_cat" type="OBJ_ARRAY" xml_elm="yes" xml_cdata="no" xml_enable="no" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpCharaCat" date_db_long="no" is_db_field="no" modify_check="no">
+      <desc>
+        <![CDATA[個性カテゴリーデータ]]>
+      </desc>
+    </member>
+    <member field="mem_chara_grp" type="OBJ_ARRAY" xml_elm="yes" xml_cdata="no" xml_enable="no" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpCharaGrp" date_db_long="no" is_db_field="no" modify_check="no">
+      <desc>
+        <![CDATA[個性カテゴリーデータ]]>
+      </desc>
+    </member>
+    <member field="mem_chara_item" type="OBJ_ARRAY" xml_elm="yes" xml_cdata="no" xml_enable="no" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpCharaItem" date_db_long="no" is_db_field="no" modify_check="no">
+      <desc>
+        <![CDATA[個性アイテムデータ]]>
+      </desc>
+    </member>
+    <member field="mem_act_cat" type="OBJ_ARRAY" xml_elm="yes" xml_cdata="no" xml_enable="no" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpActionCat" date_db_long="no" is_db_field="no" modify_check="no">
+      <desc>
+        <![CDATA[行動カテゴリーデータ]]>
+      </desc>
+    </member>
+    <member field="mem_act_grp" type="OBJ_ARRAY" xml_elm="yes" xml_cdata="no" xml_enable="no" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpActionGrp" date_db_long="no" is_db_field="no" modify_check="no">
+      <desc>
+        <![CDATA[行動グループデータ]]>
+      </desc>
+    </member>
+    <member field="mem_act_item" type="OBJ_ARRAY" xml_elm="yes" xml_cdata="no" xml_enable="no" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpActionItem" date_db_long="no" is_db_field="no" modify_check="no">
+      <desc>
+        <![CDATA[行動アイテムデータ]]>
+      </desc>
+    </member>
+    <member field="mem_scrap_cat" type="OBJ_ARRAY" xml_elm="yes" xml_cdata="no" xml_enable="no" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpScrapCat" date_db_long="no" is_db_field="no" modify_check="no">
+      <desc>
+        <![CDATA[スクラップカテゴリーデータ]]>
+      </desc>
+    </member>
+    <member field="mem_scrap_grp" type="OBJ_ARRAY" xml_elm="yes" xml_cdata="no" xml_enable="no" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpScrapGrp" date_db_long="no" is_db_field="no" modify_check="no">
+      <desc>
+        <![CDATA[スクラップグループデータ]]>
+      </desc>
+    </member>
+    <member field="mem_scrap_item" type="OBJ_ARRAY" xml_elm="yes" xml_cdata="no" xml_enable="no" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpScrapItem" date_db_long="no" is_db_field="no" modify_check="no">
+      <desc>
+        <![CDATA[スクラップアイテムデータ]]>
+      </desc>
+    </member>
+    <member field="mem_tag" type="OBJ_ARRAY" xml_elm="yes" xml_cdata="no" xml_enable="no" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpTag" date_db_long="no" is_db_field="no" modify_check="no">
+      <desc>
+        <![CDATA[スクラップタグ]]>
+      </desc>
+    </member>
+    <member field="mem_chk_cat" type="OBJ_ARRAY" xml_elm="yes" xml_cdata="no" xml_enable="no" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpChkCat" date_db_long="no" is_db_field="no" modify_check="no">
+      <desc>
+        <![CDATA[チェックカテゴリーデータ]]>
+      </desc>
+    </member>
+    <member field="mem_chk_grp" type="OBJ_ARRAY" xml_elm="yes" xml_cdata="no" xml_enable="no" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpChkGrp" date_db_long="no" is_db_field="no" modify_check="no">
+      <desc>
+        <![CDATA[チェックグループデータ]]>
+      </desc>
+    </member>
+    <member field="mem_chk_item" type="OBJ_ARRAY" xml_elm="yes" xml_cdata="no" xml_enable="no" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpChkItem" date_db_long="no" is_db_field="no" modify_check="no">
+      <desc>
+        <![CDATA[チェックアイテムデータ]]>
+      </desc>
+    </member>
+    <member field="mem_bookshelf" type="OBJ_ARRAY" xml_elm="yes" xml_cdata="no" xml_enable="no" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpBookShelf" date_db_long="no" is_db_field="no" modify_check="no">
+      <desc>
+        <![CDATA[本棚データ]]>
+      </desc>
+    </member>
+    <member field="mem_book" type="OBJ_ARRAY" xml_elm="yes" xml_cdata="no" xml_enable="no" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpBook" date_db_long="no" is_db_field="no" modify_check="no">
+      <desc>
+        <![CDATA[本データ]]>
+      </desc>
+    </member>
+    <member field="mem_chapter" type="OBJ_ARRAY" xml_elm="yes" xml_cdata="no" xml_enable="no" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpChapter" date_db_long="no" is_db_field="no" modify_check="no">
+      <desc>
+        <![CDATA[章データ]]>
+      </desc>
+    </member>
+    <member field="mem_stc_simple" type="OBJ_ARRAY" xml_elm="yes" xml_cdata="no" xml_enable="no" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpStcSimple" date_db_long="no" is_db_field="no" modify_check="no">
+      <desc>
+        <![CDATA[シンプルデータ]]>
+      </desc>
+    </member>
+    <member field="mem_stc_question" type="OBJ_ARRAY" xml_elm="yes" xml_cdata="no" xml_enable="no" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpStcQuestion" date_db_long="no" is_db_field="no" modify_check="no">
+      <desc>
+        <![CDATA[問題データ]]>
+      </desc>
+    </member>
+    <member field="mem_stc_word" type="OBJ_ARRAY" xml_elm="yes" xml_cdata="no" xml_enable="no" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpStcWord" date_db_long="no" is_db_field="no" modify_check="no">
+      <desc>
+        <![CDATA[単語データ]]>
+      </desc>
+    </member>
+    <member field="mem_stc_check" type="OBJ_ARRAY" xml_elm="yes" xml_cdata="no" xml_enable="no" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpStcCheck" date_db_long="no" is_db_field="no" modify_check="no">
+      <desc>
+        <![CDATA[チェックデータ]]>
+      </desc>
+    </member>
+    <member field="mem_stc_question_ans" type="OBJ_ARRAY" xml_elm="yes" xml_cdata="no" xml_enable="no" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpStcQuestionAns" date_db_long="no" is_db_field="no" modify_check="no">
+      <desc>
+        <![CDATA[問題回答データ]]>
+      </desc>
+    </member>
+    <member field="mem_stc_question_spinner" type="OBJ_ARRAY" xml_elm="yes" xml_cdata="no" xml_enable="no" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpStcQuestionSpinner" date_db_long="no" is_db_field="no" modify_check="no">
+      <desc>
+        <![CDATA[問題回答選択肢データ]]>
+      </desc>
+    </member>
+  </class>
+  <class serializeKey="76360223582827" name="DataSrpSite" table="SRP_SITE" extern="DataSrpBaseValue" xml_tag="" is_xml="true" is_db_table="true" is_stream="true">
+    <desc>
+      <![CDATA[サイトデータ]]>
+    </desc>
+    <constructs>
+      <construct/>
+      <construct/>
+    </constructs>
+    <member field="site_id" type="int" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[サイトID]]>
+      </desc>
+    </member>
+    <member field="name" type="string" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[名前]]>
+      </desc>
+    </member>
+    <member field="path" type="string" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[パス]]>
+      </desc>
+    </member>
+    <member field="root_choice_cat" type="object" xml_elm="yes" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpChoiceCat" date_db_long="no" is_db_field="no" modify_check="yes">
+      <desc>
+        <![CDATA[選択肢カテゴリールートデータ]]>
+      </desc>
+    </member>
+    <member field="root_chara_cat" type="object" xml_elm="yes" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpCharaCat" date_db_long="no" is_db_field="no" modify_check="yes">
+      <desc>
+        <![CDATA[個性カテゴリールートデータ]]>
+      </desc>
+    </member>
+    <member field="root_act_cat" type="object" xml_elm="yes" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpActionCat" date_db_long="no" is_db_field="no" modify_check="yes">
+      <desc>
+        <![CDATA[行動カテゴリールートデータ]]>
+      </desc>
+    </member>
+    <member field="root_scrap_cat" type="object" xml_elm="yes" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpScrapCat" date_db_long="no" is_db_field="no" modify_check="yes">
+      <desc>
+        <![CDATA[スクラップカルートテゴリーデータ]]>
+      </desc>
+    </member>
+    <member field="root_tag" type="object" xml_elm="yes" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpTag" date_db_long="no" is_db_field="no" modify_check="yes">
+      <desc>
+        <![CDATA[タグルートカテゴリーデータ]]>
+      </desc>
+    </member>
+    <member field="root_chk_cat" type="object" xml_elm="yes" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpChkCat" date_db_long="no" is_db_field="no" modify_check="yes">
+      <desc>
+        <![CDATA[チェックルートカテゴリーデータ]]>
+      </desc>
+    </member>
+    <member field="root_bookshelf" type="object" xml_elm="yes" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpBookShelf" date_db_long="no" is_db_field="no" modify_check="yes">
+      <desc>
+        <![CDATA[ルート本棚データ]]>
+      </desc>
+    </member>
+    <member field="inline_htmls" type="OBJ_ARRAY" xml_elm="yes" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpInlineHemlDataItem" date_db_long="no" is_db_field="no" modify_check="no">
+      <desc>
+        <![CDATA[インラインHTMLデータ]]>
+      </desc>
+    </member>
+  </class>
+  <class serializeKey="102254581394002" name="DataSrpBaseValue" table="SRP_BASE_VALUE" extern="DataSrpBase" xml_tag="" is_xml="true" is_db_table="true" is_stream="true">
+    <desc>
+      <![CDATA[データクラスのベースクラス]]>
+    </desc>
+    <enum name="DOC_TYPE">
+      <desc>
+        <![CDATA[ドキュメントタイプ]]>
+      </desc>
+      <enum_val name="DOC_TYPE_TXT">
+        <desc>
+          <![CDATA[テキスト]]>
+        </desc>
+      </enum_val>
+      <enum_val name="DOC_TYPE_HTML">
+        <desc>
+          <![CDATA[HTML]]>
+        </desc>
+      </enum_val>
+      <enum_val name="DOC_TYPE_IMG">
+        <desc>
+          <![CDATA[イメージ]]>
+        </desc>
+      </enum_val>
+    </enum>
+    <constructs>
+      <construct>
+        <super>
+          <arg param_type="3" val_type="DataSrpBase" val="obj_type">
+            <desc>
+              <![CDATA[]]>
+            </desc>
+          </arg>
+          <arg param_type="3" val_type="DataSrpBase" val="parent">
+            <desc>
+              <![CDATA[]]>
+            </desc>
+          </arg>
+        </super>
+        <params>
+          <param name="type" param_type="3" val_type="DataSrpBase" val="obj_type">
+            <desc>
+              <![CDATA[オブジェクトタイプ]]>
+            </desc>
+          </param>
+          <param name="" param_type="3" val_type="DataSrpBase" val="parent">
+            <desc>
+              <![CDATA[]]>
+            </desc>
+          </param>
+        </params>
+      </construct>
+    </constructs>
+    <member field="id" type="int64" db_field="item_id" xml_elm="yes" xml_cdata="no" xml_enable="yes" xml_option="no" key="yes" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[ID]]>
+      </desc>
+    </member>
+    <member field="site_id" type="bool" xml_tag="site_id" xml_elm="yes" xml_cdata="no" xml_enable="yes" xml_option="no" key="yes" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[サイトID]]>
+      </desc>
+    </member>
+    <member field="obj_type" type="enum" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="yes" gsmf="no" method="get" obj_role="new" ref_enum="DataSrpBase.OBJ_TYPE" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[オブジェクトタイプ]]>
+      </desc>
+    </member>
+    <member field="parent_id" type="int64" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="yes" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[親ID]]>
+      </desc>
+    </member>
+    <member field="name" type="string" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[名前]]>
+      </desc>
+    </member>
+    <member field="pub" type="bool" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[公開フラグ]]>
+      </desc>
+    </member>
+    <member field="desc_type" type="enum" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" ref_enum="DataSrpBaseValue.DOC_TYPE" date_db_long="no" db_type="int" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[ドキュメントタイプ]]>
+      </desc>
+    </member>
+    <member field="desc_short" type="string" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[ドキュメントショート]]>
+      </desc>
+    </member>
+    <member field="item_order" type="int" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[表示順]]>
+      </desc>
+    </member>
+    <member field="open_url" type="string" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[公開URL]]>
+      </desc>
+    </member>
+    <member field="hidden_url" type="string" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[非公開URL]]>
+      </desc>
+    </member>
+    <member field="read_mark" type="int" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[呼んだマーク]]>
+      </desc>
+    </member>
+    <member field="important_mark" type="int" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[重要マーク]]>
+      </desc>
+    </member>
+    <member field="view_cnt" type="int" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[参照カウント]]>
+      </desc>
+    </member>
+    <member field="icon" type="byte[]" xml_elm="yes" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="yes" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[アイコン]]>
+      </desc>
+    </member>
+    <member field="create_datetime" type="date" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[作成日]]>
+      </desc>
+    </member>
+    <member field="update_datetime" type="date" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[更新日]]>
+      </desc>
+    </member>
+    <member field="link_objs" type="OBJ_ARRAY" xml_tag="link_objs" xml_elm="yes" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpLinkObj" date_db_long="no" is_db_field="no" modify_check="no" newMethod="DataSrpBase.newObject" delMethod="DataSrpBase.delObject">
+      <desc>
+        <![CDATA[オブジェクトのリンクデータ]]>
+      </desc>
+      <params>
+        <param name="" param_type="3" val_type="DataSrpLinkObj" val="target_id">
+          <desc>
+            <![CDATA[]]>
+          </desc>
+        </param>
+        <param name="" param_type="3" val_type="DataSrpLinkObj" val="target_obj_type">
+          <desc>
+            <![CDATA[]]>
+          </desc>
+        </param>
+        <param name="" param_type="3" val_type="DataSrpLinkObj" val="sys_flg">
+          <desc>
+            <![CDATA[]]>
+          </desc>
+        </param>
+      </params>
+      <new_args>
+        <arg param_type="3" val_type="DataSrpBase" val="parent">
+          <desc>
+            <![CDATA[]]>
+          </desc>
+        </arg>
+        <arg param_type="3" val_type="DataSrpLinkObj" val="target_obj_type">
+          <desc>
+            <![CDATA[]]>
+          </desc>
+        </arg>
+        <arg param_type="3" val_type="DataSrpLinkObj" val="target_id">
+          <desc>
+            <![CDATA[]]>
+          </desc>
+        </arg>
+      </new_args>
+    </member>
+    <member field="desc_si" type="object" xml_elm="yes" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpSi" date_db_long="no" is_db_field="no" modify_check="yes">
+      <desc>
+        <![CDATA[文章アイテム]]>
+      </desc>
+      <new_args>
+        <arg param_type="3" val_type="DataSrpBase" val="parent">
+          <desc>
+            <![CDATA[]]>
+          </desc>
+        </arg>
+      </new_args>
+    </member>
+    <member field="icon_index" type="int" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="no" modify_check="no" init_val="-1">
+      <desc>
+        <![CDATA[アイコンのインデックス]]>
+      </desc>
+    </member>
+    <func name="getParentId" attr="virtual">
+      <desc>
+        <![CDATA[親IDを取得]]>
+      </desc>
+      <return name="" param_type="0" val_type="int64">
+        <desc>
+          <![CDATA[親ID]]>
+        </desc>
+        <return>
+          <![CDATA[親ID]]>
+        </return>
+      </return>
+      <codes>
+        <code lang="c">
+          <![CDATA[if( getParent() == NULL ) {
+  return -1;
+}
+return getParent()->getId();]]>
+        </code>
+        <code lang="java">
+          <![CDATA[if( getParent() == NULL ) {
+  return -1;
+}
+return getParent().getId();]]>
+        </code>
+      </codes>
+    </func>
+    <func name="setParentId" attr="virtual">
+      <desc>
+        <![CDATA[親IDをセット]]>
+      </desc>
+      <params>
+        <param name="id" param_type="0" val_type="int64">
+          <desc>
+            <![CDATA[親ID]]>
+          </desc>
+        </param>
+      </params>
+      <return name="" param_type="0" val_type="void">
+        <desc>
+          <![CDATA[]]>
+        </desc>
+        <return>
+          <![CDATA[]]>
+        </return>
+      </return>
+      <codes>
+        <code lang="c">
+          <![CDATA[// non]]>
+        </code>
+        <code lang="java">
+          <![CDATA[// non]]>
+        </code>
+      </codes>
+    </func>
+  </class>
+  <class serializeKey="84640920508292" name="DataSrpSi" table="SRP_SI" extern="DataSrpBase" xml_tag="" is_xml="true" is_db_table="true" is_stream="true">
+    <desc>
+      <![CDATA[文章アイテム]]>
+    </desc>
+    <constructs>
+      <construct/>
+      <construct/>
+    </constructs>
+    <member field="id" type="int64" db_field="item_id" xml_elm="yes" xml_cdata="no" xml_enable="yes" xml_option="no" key="yes" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[ID]]>
+      </desc>
+    </member>
+    <member field="site_id" type="int" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="yes" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[サイトID]]>
+      </desc>
+    </member>
+    <member field="sys_flg" type="int" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="yes" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[システムフラグ]]>
+      </desc>
+    </member>
+    <member field="sentence" type="byte[]" xml_elm="yes" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="yes" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[文章本体]]>
+      </desc>
+    </member>
+    <member field="type" type="enum" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" ref_enum="DataSrpBaseValue.DOC_TYPE" date_db_long="no" db_type="int" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[ドキュメントタイプ]]>
+      </desc>
+    </member>
+    <member field="sp" type="bool" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[スピーチ有無]]>
+      </desc>
+    </member>
+    <member field="lng" type="string" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[言語]]>
+      </desc>
+    </member>
+    <member field="itt" type="string" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[インラインテキストテンプレート]]>
+      </desc>
+    </member>
+    <member field="create_datetime" type="date" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[作成日]]>
+      </desc>
+    </member>
+    <member field="update_datetime" type="date" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[更新日]]>
+      </desc>
+    </member>
+    <member field="swap_txt" type="string" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="no" modify_check="no">
+      <desc>
+        <![CDATA[ショートテキストの受け渡しに使用する。]]>
+      </desc>
+    </member>
+  </class>
+  <class serializeKey="115865332754304" name="DataSrpFile" table="SRP_FILE" extern="DataSrpBase" xml_tag="" is_xml="true" is_db_table="true" is_stream="true">
+    <desc>
+      <![CDATA[ファイルデータ]]>
+    </desc>
+    <constructs>
+      <construct/>
+      <construct/>
+    </constructs>
+    <member field="id" type="int64" db_field="file_id" xml_elm="yes" xml_cdata="no" xml_enable="yes" xml_option="no" key="yes" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[ID]]>
+      </desc>
+    </member>
+    <member field="site_id" type="int" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="yes" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[サイトID]]>
+      </desc>
+    </member>
+    <member field="parent_id" type="int64" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[親ID]]>
+      </desc>
+    </member>
+    <member field="name" type="string" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[名前]]>
+      </desc>
+    </member>
+    <member field="bindata" type="byte[]" xml_elm="yes" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="yes" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[ファイルのデータ]]>
+      </desc>
+    </member>
+    <member field="sys_flg" type="int" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[システムフラグ 0は、ユーザー 0以外は、システム使用]]>
+      </desc>
+    </member>
+    <member field="create_datetime" type="date" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[作成日]]>
+      </desc>
+    </member>
+    <member field="update_datetime" type="date" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[更新日]]>
+      </desc>
+    </member>
+  </class>
+  <class serializeKey="51329154164960" name="DataSrpInlineHemlDataItem" table="SRP_INLINE_HTML" extern="DataSrpBaseValue" xml_tag="" is_xml="true" is_db_table="false" is_stream="true">
+    <desc>
+      <![CDATA[インラインHTMLデータ]]>
+    </desc>
+    <constructs>
+      <construct/>
+      <construct/>
+    </constructs>
+  </class>
+  <class serializeKey="117102283330894" name="DataSrpChoiceCat" table="" extern="DataSrpBaseValue" xml_tag="" is_xml="true" is_db_table="false" is_stream="true">
+    <desc>
+      <![CDATA[選択肢カテゴリーデータ]]>
+    </desc>
+    <constructs>
+      <construct>
+        <super>
+          <arg param_type="99" val_type="DataSrpBase" val="parent">
+            <desc>
+              <![CDATA[]]>
+            </desc>
+          </arg>
+          <arg param_type="1" val_type="DataSrpBase.OBJ_TYPE" val="SRP_CHOICE_CAT">
+            <desc>
+              <![CDATA[]]>
+            </desc>
+          </arg>
+        </super>
+        <params>
+          <param name="" param_type="3" val_type="DataSrpBase" val="parent">
+            <desc>
+              <![CDATA[]]>
+            </desc>
+          </param>
+        </params>
+      </construct>
+    </constructs>
+    <member field="children" type="BASE_OBJ_ARRAY" xml_tag="children" xml_elm="yes" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpBaseValue" date_db_long="no" is_db_field="no" modify_check="no" delMethod="DataSrpBase.delObject">
+      <desc>
+        <![CDATA[子アイテム]]>
+      </desc>
+      <loaded_classies>
+        <loaded_class name="DataSrpChoiceCat" keyword="ChoiceCat" newMethod="DataSrpBase.newObject">
+          <params>
+            <param name="" param_type="3" val_type="DataSrpBaseValue" val="id">
+              <desc>
+                <![CDATA[]]>
+              </desc>
+            </param>
+          </params>
+          <new_args>
+            <arg param_type="3" val_type="DataSrpBase" val="parent">
+              <desc>
+                <![CDATA[]]>
+              </desc>
+            </arg>
+            <arg param_type="99" val_type="DataSrpBaseValue" val="id">
+              <desc>
+                <![CDATA[]]>
+              </desc>
+            </arg>
+            <arg param_type="1" val_type="DataSrpBase.OBJ_TYPE" val="SRP_CHOICE_CAT">
+              <desc>
+                <![CDATA[]]>
+              </desc>
+            </arg>
+          </new_args>
+        </loaded_class>
+        <loaded_class name="DataSrpChoiceGrp" keyword="ChoiceGrp" newMethod="DataSrpBase.newObject">
+          <params>
+            <param name="" param_type="3" val_type="DataSrpBaseValue" val="id">
+              <desc>
+                <![CDATA[]]>
+              </desc>
+            </param>
+          </params>
+          <new_args>
+            <arg param_type="3" val_type="DataSrpBase" val="parent">
+              <desc>
+                <![CDATA[]]>
+              </desc>
+            </arg>
+            <arg param_type="99" val_type="DataSrpBaseValue" val="id">
+              <desc>
+                <![CDATA[]]>
+              </desc>
+            </arg>
+            <arg param_type="1" val_type="DataSrpBase.OBJ_TYPE" val="SRP_CHOICE_GRP">
+              <desc>
+                <![CDATA[]]>
+              </desc>
+            </arg>
+          </new_args>
+        </loaded_class>
+      </loaded_classies>
+    </member>
+  </class>
+  <class serializeKey="85950885542949" name="DataSrpChoiceGrp" table="" extern="DataSrpBaseValue" xml_tag="" is_xml="true" is_db_table="false" is_stream="true">
+    <desc>
+      <![CDATA[選択肢グループデータ]]>
+    </desc>
+    <constructs>
+      <construct/>
+      <construct/>
+    </constructs>
+    <member field="children" type="OBJ_ARRAY" xml_tag="children" xml_elm="yes" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpBaseValue" date_db_long="no" is_db_field="no" modify_check="no">
+      <desc>
+        <![CDATA[子アイテム]]>
+      </desc>
+      <loaded_classies>
+        <loaded_class name="DataSrpChoiceGrp" keyword="ChoiceGrp"/>
+        <loaded_class name="DataSrpChoiceItem" keyword="ChoiceItem"/>
+      </loaded_classies>
+    </member>
+  </class>
+  <class serializeKey="108928960582447" name="DataSrpChoiceItem" table="SRP_CHOICE_ITEM" extern="DataSrpBaseValue" xml_tag="" is_xml="true" is_db_table="true" is_stream="true">
+    <desc>
+      <![CDATA[選択肢アイテムデータ]]>
+    </desc>
+    <constructs>
+      <construct/>
+      <construct/>
+    </constructs>
+    <member field="id" type="int64" db_field="choice_item_id" xml_elm="yes" xml_cdata="no" xml_enable="yes" xml_option="no" key="yes" null="no" inherit="yes" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[ID]]>
+      </desc>
+    </member>
+    <member field="site_id" type="int" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="yes" null="no" inherit="yes" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[サイトID]]>
+      </desc>
+    </member>
+    <member field="positive" type="bool" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[ポジティブ・ネガティブ]]>
+      </desc>
+    </member>
+    <member field="base_point" type="int" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[ベース点数]]>
+      </desc>
+    </member>
+    <member field="create_datetime" type="date" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="yes" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[作成日]]>
+      </desc>
+    </member>
+    <member field="update_datetime" type="date" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="yes" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[更新日]]>
+      </desc>
+    </member>
+  </class>
+  <class serializeKey="95429878359569" name="DataSrpCharaCat" table="SRP_CHARA_CAT" extern="DataSrpBaseValue" xml_tag="" is_xml="true" is_db_table="false" is_stream="true">
+    <desc>
+      <![CDATA[個性カテゴリーデータ]]>
+    </desc>
+    <constructs>
+      <construct/>
+      <construct/>
+    </constructs>
+    <member field="children" type="OBJ_ARRAY" xml_tag="children" xml_elm="yes" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpBaseValue" date_db_long="no" is_db_field="no" modify_check="no">
+      <desc>
+        <![CDATA[子アイテム]]>
+      </desc>
+      <loaded_classies>
+        <loaded_class name="DataSrpCharaCat" keyword="CharaCat"/>
+        <loaded_class name="DataSrpCharaGrp" keyword="CharaGrp"/>
+      </loaded_classies>
+    </member>
+  </class>
+  <class serializeKey="5849745465963" name="DataSrpCharaGrp" table="SRP_CHARA_GRP" extern="DataSrpBaseValue" xml_tag="" is_xml="true" is_db_table="false" is_stream="true">
+    <desc>
+      <![CDATA[個性グループデータ]]>
+    </desc>
+    <constructs>
+      <construct/>
+      <construct/>
+    </constructs>
+    <member field="children" type="OBJ_ARRAY" xml_tag="children" xml_elm="yes" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpBaseValue" date_db_long="no" is_db_field="no" modify_check="no">
+      <desc>
+        <![CDATA[子アイテム]]>
+      </desc>
+      <loaded_classies>
+        <loaded_class name="DataSrpCharaGrp" keyword="CharaGrp"/>
+        <loaded_class name="DataSrpCharaItem" keyword="CharaItem"/>
+      </loaded_classies>
+    </member>
+  </class>
+  <class serializeKey="28398323772859" name="DataSrpCharaItem" table="SRP_CHARA_ITEM" extern="DataSrpBaseValue" xml_tag="" is_xml="true" is_db_table="false" is_stream="true">
+    <desc>
+      <![CDATA[個性アイテムデータ]]>
+    </desc>
+    <constructs>
+      <construct/>
+      <construct/>
+    </constructs>
+  </class>
+  <class serializeKey="38332583140220" name="DataSrpActionCat" table="SRP_ACTION_CAT" extern="DataSrpBaseValue" xml_tag="" is_xml="true" is_db_table="false" is_stream="true">
+    <desc>
+      <![CDATA[行動カテゴリーデータ]]>
+    </desc>
+    <constructs>
+      <construct/>
+      <construct/>
+    </constructs>
+    <member field="children" type="OBJ_ARRAY" xml_tag="children" xml_elm="yes" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpBaseValue" date_db_long="no" is_db_field="no" modify_check="no">
+      <desc>
+        <![CDATA[子アイテム]]>
+      </desc>
+      <loaded_classies>
+        <loaded_class name="DataSrpActionCat" keyword="ActionCat"/>
+        <loaded_class name="DataSrpActionGrp" keyword="ActionGrp"/>
+      </loaded_classies>
+    </member>
+  </class>
+  <class serializeKey="31808527797532" name="DataSrpActionGrp" table="SRP_ACTION_GRP" extern="DataSrpBaseValue" xml_tag="" is_xml="true" is_db_table="false" is_stream="true">
+    <desc>
+      <![CDATA[行動グループデータ]]>
+    </desc>
+    <constructs>
+      <construct/>
+      <construct/>
+    </constructs>
+    <member field="children" type="OBJ_ARRAY" xml_tag="children" xml_elm="yes" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpBaseValue" date_db_long="no" is_db_field="no" modify_check="no">
+      <desc>
+        <![CDATA[子アイテム]]>
+      </desc>
+      <loaded_classies>
+        <loaded_class name="DataSrpActionGrp" keyword="ActionGrp"/>
+        <loaded_class name="DataSrpActionItem" keyword="ActionItem"/>
+      </loaded_classies>
+    </member>
+  </class>
+  <class serializeKey="86608015528632" name="DataSrpActionItem" table="SRP_ACTION_ITEM" extern="DataSrpBaseValue" xml_tag="" is_xml="true" is_db_table="false" is_stream="true">
+    <desc>
+      <![CDATA[行動アイテムデータ]]>
+    </desc>
+    <constructs>
+      <construct/>
+      <construct/>
+    </constructs>
+  </class>
+  <class serializeKey="119683558693581" name="DataSrpScrapCat" table="SRP_SCRAP_CAT" extern="DataSrpBaseValue" xml_tag="" is_xml="true" is_db_table="false" is_stream="true">
+    <desc>
+      <![CDATA[スクラップカテゴリーデータ]]>
+    </desc>
+    <constructs>
+      <construct/>
+      <construct/>
+    </constructs>
+    <member field="children" type="OBJ_ARRAY" xml_tag="children" xml_elm="yes" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpBaseValue" date_db_long="no" is_db_field="no" modify_check="no">
+      <desc>
+        <![CDATA[子アイテム]]>
+      </desc>
+      <loaded_classies>
+        <loaded_class name="DataSrpScrapCat" keyword="ScrapCat"/>
+        <loaded_class name="DataSrpScrapGrp" keyword="ScrapGrp"/>
+      </loaded_classies>
+    </member>
+  </class>
+  <class serializeKey="112029926977585" name="DataSrpScrapGrp" table="SRP_SCRAP_GRP" extern="DataSrpBaseValue" xml_tag="" is_xml="true" is_db_table="false" is_stream="true">
+    <desc>
+      <![CDATA[スクラップグループデータ]]>
+    </desc>
+    <constructs>
+      <construct/>
+      <construct/>
+    </constructs>
+    <member field="children" type="OBJ_ARRAY" xml_tag="children" xml_elm="yes" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpBaseValue" date_db_long="no" is_db_field="no" modify_check="no">
+      <desc>
+        <![CDATA[子アイテム]]>
+      </desc>
+      <loaded_classies>
+        <loaded_class name="DataSrpScrapGrp" keyword="ScrapGrp"/>
+        <loaded_class name="DataSrpScrapItem" keyword="ScrapItem"/>
+      </loaded_classies>
+    </member>
+  </class>
+  <class serializeKey="9212704866578" name="DataSrpScrapItem" table="SRP_SCRAP_ITEM" extern="DataSrpBaseValue" xml_tag="" is_xml="true" is_db_table="false" is_stream="true">
+    <desc>
+      <![CDATA[スクラップアイテムデータ]]>
+    </desc>
+    <constructs>
+      <construct/>
+      <construct/>
+    </constructs>
+  </class>
+  <class serializeKey="124730145259226" name="DataSrpTag" table="SRP_TAG" extern="DataSrpBaseValue" xml_tag="" is_xml="true" is_db_table="false" is_stream="true">
+    <desc>
+      <![CDATA[スクラップタグ]]>
+    </desc>
+    <constructs>
+      <construct/>
+      <construct/>
+    </constructs>
+    <member field="children" type="OBJ_ARRAY" xml_tag="children" xml_elm="yes" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpTag" date_db_long="no" is_db_field="no" modify_check="no">
+      <desc>
+        <![CDATA[子アイテム]]>
+      </desc>
+    </member>
+    <member field="links" type="OBJ_ARRAY" xml_tag="links" xml_elm="yes" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpTagObj" date_db_long="no" is_db_field="no" modify_check="no">
+      <desc>
+        <![CDATA[子アイテム]]>
+      </desc>
+    </member>
+  </class>
+  <class serializeKey="131438884169240" name="DataSrpChkCat" table="SRP_CHK_CAT" extern="DataSrpBaseValue" xml_tag="" is_xml="true" is_db_table="false" is_stream="true">
+    <desc>
+      <![CDATA[チェックカテゴリーデータ]]>
+    </desc>
+    <constructs>
+      <construct/>
+      <construct/>
+    </constructs>
+    <member field="children" type="OBJ_ARRAY" xml_tag="children" xml_elm="yes" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpBaseValue" date_db_long="no" is_db_field="no" modify_check="no">
+      <desc>
+        <![CDATA[子アイテム]]>
+      </desc>
+      <loaded_classies>
+        <loaded_class name="DataSrpChkCat" keyword="ChkCat"/>
+        <loaded_class name="DataSrpChkGrp" keyword="ChkGrp"/>
+      </loaded_classies>
+    </member>
+  </class>
+  <class serializeKey="26190710601451" name="DataSrpChkGrp" table="SRP_CHK_GRP" extern="DataSrpBaseValue" xml_tag="" is_xml="true" is_db_table="false" is_stream="true">
+    <desc>
+      <![CDATA[チェックグループデータ]]>
+    </desc>
+    <constructs>
+      <construct/>
+      <construct/>
+    </constructs>
+    <member field="children" type="OBJ_ARRAY" xml_tag="children" xml_elm="yes" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpBaseValue" date_db_long="no" is_db_field="no" modify_check="no">
+      <desc>
+        <![CDATA[子アイテム]]>
+      </desc>
+      <loaded_classies>
+        <loaded_class name="DataSrpChkGrp" keyword="ChkGrp"/>
+        <loaded_class name="DataSrpChkItem" keyword="ChkItem"/>
+      </loaded_classies>
+    </member>
+  </class>
+  <class serializeKey="108928960571771" name="DataSrpChkItem" table="SRP_CHK_ITEM" extern="DataSrpBaseValue" xml_tag="" is_xml="true" is_db_table="false" is_stream="true">
+    <desc>
+      <![CDATA[チェックアイテムデータ]]>
+    </desc>
+    <constructs>
+      <construct/>
+      <construct/>
+    </constructs>
+  </class>
+  <class serializeKey="17252883646342" name="DataSrpBookShelf" table="SRP_BOOKSHELF" extern="DataSrpBaseValue" xml_tag="" is_xml="true" is_db_table="false" is_stream="true">
+    <desc>
+      <![CDATA[本棚データ]]>
+    </desc>
+    <constructs>
+      <construct/>
+      <construct/>
+    </constructs>
+    <member field="children" type="OBJ_ARRAY" xml_tag="children" xml_elm="yes" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpBaseValue" date_db_long="no" is_db_field="no" modify_check="no">
+      <desc>
+        <![CDATA[子アイテム]]>
+      </desc>
+      <loaded_classies>
+        <loaded_class name="DataSrpBookShelf" keyword="BookShelf"/>
+        <loaded_class name="DataSrpBook" keyword="Book"/>
+      </loaded_classies>
+    </member>
+  </class>
+  <class serializeKey="70463233465099" name="DataSrpBook" table="SRP_BOOK" extern="DataSrpBaseValue" xml_tag="" is_xml="true" is_db_table="true" is_stream="true">
+    <desc>
+      <![CDATA[本データ]]>
+    </desc>
+    <enum name="BOOK_TYPE">
+      <desc>
+        <![CDATA[Book Type]]>
+      </desc>
+      <enum_val name="BOOK_TYPE_SIMPLE" val="0">
+        <desc>
+          <![CDATA[シンプル]]>
+        </desc>
+      </enum_val>
+      <enum_val name="BOOK_TYPE_QUESTION" val="1">
+        <desc>
+          <![CDATA[問題集]]>
+        </desc>
+      </enum_val>
+      <enum_val name="BOOK_TYPE_WORD" val="2">
+        <desc>
+          <![CDATA[単語帳]]>
+        </desc>
+      </enum_val>
+      <enum_val name="BOOK_TYPE_CHECK" val="3">
+        <desc>
+          <![CDATA[チェックリスト]]>
+        </desc>
+      </enum_val>
+      <enum_val name="BOOK_TYPE_PERSON_CHECK" val="4">
+        <desc>
+          <![CDATA[人物チェックリスト]]>
+        </desc>
+      </enum_val>
+    </enum>
+    <enum name="ENC_TYPE">
+      <desc>
+        <![CDATA[Book Type]]>
+      </desc>
+      <enum_val name="ENC_TYPE_NORMAL" val="0">
+        <desc>
+          <![CDATA[Normal]]>
+        </desc>
+      </enum_val>
+      <enum_val name="ENC_TYPE_ARC" val="1">
+        <desc>
+          <![CDATA[Archive]]>
+        </desc>
+      </enum_val>
+      <enum_val name="ENC_TYPE_ENC" val="2">
+        <desc>
+          <![CDATA[Encrypt]]>
+        </desc>
+      </enum_val>
+    </enum>
+    <constructs>
+      <construct/>
+      <construct/>
+    </constructs>
+    <member field="id" type="int64" db_field="book_id" xml_elm="yes" xml_cdata="no" xml_enable="yes" xml_option="no" key="yes" null="no" inherit="yes" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[ID]]>
+      </desc>
+    </member>
+    <member field="site_id" type="int" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="yes" null="no" inherit="yes" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[サイトID]]>
+      </desc>
+    </member>
+    <member field="book_type" type="enum" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" ref_enum="DataSrpBook.BOOK_TYPE" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[Book Type]]>
+      </desc>
+    </member>
+    <member field="enc_type" type="enum" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" ref_enum="DataSrpBook.ENC_TYPE" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[エンコードタイプ]]>
+      </desc>
+    </member>
+    <member field="price" type="double" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[値段]]>
+      </desc>
+    </member>
+    <member field="purchase_data" type="string" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[購入データ]]>
+      </desc>
+    </member>
+    <member field="create_datetime" type="date" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[作成日]]>
+      </desc>
+    </member>
+    <member field="update_datetime" type="date" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[更新日]]>
+      </desc>
+    </member>
+    <member field="children" type="OBJ_ARRAY" xml_tag="children" xml_elm="yes" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpChapter" date_db_long="no" is_db_field="no" modify_check="no">
+      <desc>
+        <![CDATA[子アイテム]]>
+      </desc>
+    </member>
+    <member field="usr_have" type="bool" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="no" modify_check="yes">
+      <desc>
+        <![CDATA[ユーザーデータを持っているか？]]>
+      </desc>
+    </member>
+    <member field="usr_right_rate" type="int" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="no" modify_check="yes">
+      <desc>
+        <![CDATA[正解率(Chapter中の平均)]]>
+      </desc>
+    </member>
+    <member field="usr_create_datetime" type="date" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="no" modify_check="yes">
+      <desc>
+        <![CDATA[レコード追加日]]>
+      </desc>
+    </member>
+    <member field="usr_update_datetime" type="date" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="no" modify_check="yes">
+      <desc>
+        <![CDATA[更新日]]>
+      </desc>
+    </member>
+    <member field="usr_download_datetime" type="date" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="no" modify_check="yes">
+      <desc>
+        <![CDATA[ダウンロード日]]>
+      </desc>
+    </member>
+  </class>
+  <class serializeKey="80616536171418" name="DataSrpChapter" table="SRP_CHAPTER" extern="DataSrpBaseValue" xml_tag="" is_xml="true" is_db_table="true" is_stream="true">
+    <desc>
+      <![CDATA[章データ]]>
+    </desc>
+    <enum name="DIR">
+      <desc>
+        <![CDATA[Direction]]>
+      </desc>
+      <enum_val name="DIR_SINGLE" val="0">
+        <desc>
+          <![CDATA[SINGLE]]>
+        </desc>
+      </enum_val>
+      <enum_val name="DIR_BOUTH" val="1">
+        <desc>
+          <![CDATA[BOUTH]]>
+        </desc>
+      </enum_val>
+    </enum>
+    <constructs>
+      <construct/>
+      <construct/>
+    </constructs>
+    <member field="id" type="int64" db_field="chapter_id" xml_elm="yes" xml_cdata="no" xml_enable="yes" xml_option="no" key="yes" null="no" inherit="yes" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[ID]]>
+      </desc>
+    </member>
+    <member field="site_id" type="int" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="yes" null="no" inherit="yes" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[サイトID]]>
+      </desc>
+    </member>
+    <member field="chapter_type" type="enum" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" ref_enum="DataSrpBook.BOOK_TYPE" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[章タイプ]]>
+      </desc>
+    </member>
+    <member field="dir" type="enum" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" ref_enum="DataSrpChapter.DIR" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[Direction]]>
+      </desc>
+    </member>
+    <member field="sp_key" type="string" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[スペシャルキー]]>
+      </desc>
+    </member>
+    <member field="create_datetime" type="date" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[作成日]]>
+      </desc>
+    </member>
+    <member field="update_datetime" type="date" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[更新日]]>
+      </desc>
+    </member>
+    <member field="children" type="OBJ_ARRAY" xml_tag="children" xml_elm="yes" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpBaseValue" date_db_long="no" is_db_field="no" modify_check="no">
+      <desc>
+        <![CDATA[子アイテム]]>
+      </desc>
+      <loaded_classies>
+        <loaded_class name="DataSrpChapter" keyword="Chapter"/>
+        <loaded_class name="DataSrpStcSimple" keyword="Simple"/>
+        <loaded_class name="DataSrpStcQuestion" keyword="Question"/>
+        <loaded_class name="DataSrpStcWord" keyword="Word"/>
+        <loaded_class name="DataSrpStcCheck" keyword="Check"/>
+      </loaded_classies>
+    </member>
+    <member field="usr_have" type="bool" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="no" modify_check="yes">
+      <desc>
+        <![CDATA[ユーザーデータを持っているか？]]>
+      </desc>
+    </member>
+    <member field="usr_right_rate" type="int" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="no" modify_check="yes">
+      <desc>
+        <![CDATA[正解率(Chapter中の平均)]]>
+      </desc>
+    </member>
+    <member field="usr_create_datetime" type="date" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="no" modify_check="yes">
+      <desc>
+        <![CDATA[レコード追加日]]>
+      </desc>
+    </member>
+    <member field="usr_update_datetime" type="date" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="no" modify_check="yes">
+      <desc>
+        <![CDATA[更新日]]>
+      </desc>
+    </member>
+    <member field="usr_download_datetime" type="date" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="no" modify_check="yes">
+      <desc>
+        <![CDATA[ダウンロード日]]>
+      </desc>
+    </member>
+    <member field="usr_latest_datetime" type="date" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="no" modify_check="yes">
+      <desc>
+        <![CDATA[最終学習日]]>
+      </desc>
+    </member>
+  </class>
+  <class serializeKey="110028472209104" name="DataSrpStcSimple" table="SRP_STC_SIMPLE" extern="DataSrpBaseValue" xml_tag="" is_xml="true" is_db_table="false" is_stream="true">
+    <desc>
+      <![CDATA[シンプルデータ]]>
+    </desc>
+    <constructs>
+      <construct/>
+      <construct/>
+    </constructs>
+  </class>
+  <class serializeKey="72722386261512" name="DataSrpStcQuestion" table="SRP_STC_QUESTION" extern="DataSrpBaseValue" xml_tag="" is_xml="true" is_db_table="true" is_stream="true">
+    <desc>
+      <![CDATA[問題データ]]>
+    </desc>
+    <enum name="Q_MODE">
+      <desc>
+        <![CDATA[選択肢モード]]>
+      </desc>
+      <enum_val name="Q_MODE_CHECK" val="0">
+        <desc>
+          <![CDATA[Check]]>
+        </desc>
+      </enum_val>
+      <enum_val name="Q_MODE_RADIO" val="1">
+        <desc>
+          <![CDATA[Radio]]>
+        </desc>
+      </enum_val>
+      <enum_val name="Q_MODE_SPINNER" val="2">
+        <desc>
+          <![CDATA[Spinner]]>
+        </desc>
+      </enum_val>
+      <enum_val name="Q_MODE_INPUT" val="3">
+        <desc>
+          <![CDATA[input]]>
+        </desc>
+      </enum_val>
+    </enum>
+    <constructs>
+      <construct/>
+      <construct/>
+    </constructs>
+    <member field="id" type="int64" db_field="q_id" xml_elm="yes" xml_cdata="no" xml_enable="yes" xml_option="no" key="yes" null="no" inherit="yes" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[ID]]>
+      </desc>
+    </member>
+    <member field="site_id" type="int" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="yes" null="no" inherit="yes" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[サイトID]]>
+      </desc>
+    </member>
+    <member field="q_mode" type="enum" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" ref_enum="DataSrpStcQuestion.Q_MODE" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[選択肢モード]]>
+      </desc>
+    </member>
+    <member field="shuffle" type="bool" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[シャッフル]]>
+      </desc>
+    </member>
+    <member field="explanation_id" type="int64" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[解説ID]]>
+      </desc>
+    </member>
+    <member field="explanation_link" type="bool" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[解説がリンクであるかどうか]]>
+      </desc>
+    </member>
+    <member field="explanation_short" type="string" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[解説ショート]]>
+      </desc>
+    </member>
+    <member field="create_datetime" type="date" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[作成日]]>
+      </desc>
+    </member>
+    <member field="update_datetime" type="date" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[更新日]]>
+      </desc>
+    </member>
+    <member field="explanation_si" type="object" xml_elm="yes" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpSi" date_db_long="no" is_db_field="no" modify_check="yes">
+      <desc>
+        <![CDATA[文章アイテム]]>
+      </desc>
+    </member>
+    <member field="ansies" type="OBJ_ARRAY" xml_tag="ans" xml_elm="yes" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpStcQuestionAns" date_db_long="no" is_db_field="no" modify_check="no">
+      <desc>
+        <![CDATA[問題回答データ]]>
+      </desc>
+    </member>
+    <member field="spinners" type="OBJ_ARRAY" xml_tag="spinner" xml_elm="yes" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpStcQuestionSpinner" date_db_long="no" is_db_field="no" modify_check="no">
+      <desc>
+        <![CDATA[問題回答選択肢データ]]>
+      </desc>
+    </member>
+    <member field="usr_have" type="bool" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="no" modify_check="yes">
+      <desc>
+        <![CDATA[ユーザーデータを持っているか？]]>
+      </desc>
+    </member>
+    <member field="usr_answer_count" type="int" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="no" modify_check="yes">
+      <desc>
+        <![CDATA[回答回数]]>
+      </desc>
+    </member>
+    <member field="usr_right_count" type="int" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="no" modify_check="yes">
+      <desc>
+        <![CDATA[正解数]]>
+      </desc>
+    </member>
+    <member field="usr_right_rate" type="int" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="no" modify_check="yes">
+      <desc>
+        <![CDATA[正解率]]>
+      </desc>
+    </member>
+    <member field="usr_mark" type="int" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="no" modify_check="yes">
+      <desc>
+        <![CDATA[マーク]]>
+      </desc>
+    </member>
+    <member field="usr_incorrect_datetime" type="date" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="no" modify_check="yes">
+      <desc>
+        <![CDATA[最後に不正解だった日時]]>
+      </desc>
+    </member>
+    <member field="usr_latest_datetime" type="date" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="no" modify_check="yes">
+      <desc>
+        <![CDATA[最終回答日]]>
+      </desc>
+    </member>
+    <member field="usr_forgetfulness" type="int" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="no" modify_check="yes" init_val="100">
+      <desc>
+        <![CDATA[忘却率]]>
+      </desc>
+    </member>
+  </class>
+  <class serializeKey="23154168721996" name="DataSrpStcWord" table="SRP_STC_WORD" extern="DataSrpBaseValue" xml_tag="" is_xml="true" is_db_table="true" is_stream="true">
+    <desc>
+      <![CDATA[単語データ]]>
+    </desc>
+    <constructs>
+      <construct/>
+      <construct/>
+    </constructs>
+    <member field="id" type="int64" db_field="w_id" xml_elm="yes" xml_cdata="no" xml_enable="yes" xml_option="no" key="yes" null="no" inherit="yes" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[ID]]>
+      </desc>
+    </member>
+    <member field="site_id" type="int" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="yes" null="no" inherit="yes" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[サイトID]]>
+      </desc>
+    </member>
+    <member field="qh" type="string" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[クエリーヒント]]>
+      </desc>
+    </member>
+    <member field="answer_id" type="int64" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[回答ID]]>
+      </desc>
+    </member>
+    <member field="answer_link" type="bool" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[回答がリンクであるかどうか]]>
+      </desc>
+    </member>
+    <member field="answer_short" type="string" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[回答ショート]]>
+      </desc>
+    </member>
+    <member field="explanation_id" type="int64" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[解説ID]]>
+      </desc>
+    </member>
+    <member field="explanation_link" type="bool" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[解説がリンクであるかどうか]]>
+      </desc>
+    </member>
+    <member field="explanation_short" type="string" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[解説ショート]]>
+      </desc>
+    </member>
+    <member field="create_datetime" type="date" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[作成日]]>
+      </desc>
+    </member>
+    <member field="update_datetime" type="date" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[更新日]]>
+      </desc>
+    </member>
+    <member field="ans_si" type="object" xml_elm="yes" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpSi" date_db_long="no" is_db_field="no" modify_check="yes">
+      <desc>
+        <![CDATA[回答アイテム]]>
+      </desc>
+    </member>
+    <member field="explanation_si" type="object" xml_elm="yes" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" class="DataSrpSi" date_db_long="no" is_db_field="no" modify_check="yes">
+      <desc>
+        <![CDATA[解説アイテム]]>
+      </desc>
+    </member>
+    <member field="usr_have" type="bool" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="no" modify_check="yes">
+      <desc>
+        <![CDATA[ユーザーデータを持っているか？]]>
+      </desc>
+    </member>
+    <member field="usr_answer_count" type="int" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="no" modify_check="yes">
+      <desc>
+        <![CDATA[回答回数]]>
+      </desc>
+    </member>
+    <member field="usr_right_count" type="int" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="no" modify_check="yes">
+      <desc>
+        <![CDATA[正解数]]>
+      </desc>
+    </member>
+    <member field="usr_right_rate" type="int" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="no" modify_check="yes">
+      <desc>
+        <![CDATA[正解率]]>
+      </desc>
+    </member>
+    <member field="usr_mark" type="int" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="no" modify_check="yes">
+      <desc>
+        <![CDATA[マーク]]>
+      </desc>
+    </member>
+    <member field="usr_incorrect_datetime" type="date" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="no" modify_check="yes">
+      <desc>
+        <![CDATA[最後に不正解だった日時]]>
+      </desc>
+    </member>
+    <member field="usr_latest_datetime" type="date" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="no" modify_check="yes">
+      <desc>
+        <![CDATA[最終回答日]]>
+      </desc>
+    </member>
+    <member field="usr_forgetfulness" type="int" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="no" modify_check="yes" init_val="100">
+      <desc>
+        <![CDATA[忘却率]]>
+      </desc>
+    </member>
+  </class>
+  <class serializeKey="60017873019140" name="DataSrpStcCheck" table="SRP_STC_CHECK" extern="DataSrpBaseValue" xml_tag="" is_xml="true" is_db_table="true" is_stream="true">
+    <desc>
+      <![CDATA[チェックデータ]]>
+    </desc>
+    <enum name="CHK_MODE">
+      <desc>
+        <![CDATA[チェックモード]]>
+      </desc>
+      <enum_val name="CHK_MODE_YESNO" val="0">
+        <desc>
+          <![CDATA[Yes/No]]>
+        </desc>
+      </enum_val>
+      <enum_val name="CHK_MODE_CHOICE" val="1">
+        <desc>
+          <![CDATA[Choice]]>
+        </desc>
+      </enum_val>
+      <enum_val name="CHK_MODE_SEPARATOR" val="999">
+        <desc>
+          <![CDATA[セパレータ]]>
+        </desc>
+      </enum_val>
+    </enum>
+    <constructs>
+      <construct/>
+      <construct/>
+    </constructs>
+    <member field="id" type="int64" db_field="chk_id" xml_elm="yes" xml_cdata="no" xml_enable="yes" xml_option="no" key="yes" null="no" inherit="yes" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[ID]]>
+      </desc>
+    </member>
+    <member field="site_id" type="int" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="yes" null="no" inherit="yes" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[サイトID]]>
+      </desc>
+    </member>
+    <member field="chk_mode" type="enum" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" ref_enum="DataSrpStcCheck.CHK_MODE" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[チェックモード]]>
+      </desc>
+    </member>
+    <member field="positive" type="bool" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[ポジティブ・ネガティブ]]>
+      </desc>
+    </member>
+    <member field="choice_id" type="int64" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[選択肢ID]]>
+      </desc>
+    </member>
+    <member field="create_datetime" type="date" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[作成日]]>
+      </desc>
+    </member>
+    <member field="update_datetime" type="date" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[更新日]]>
+      </desc>
+    </member>
+  </class>
+  <class serializeKey="116651311777535" name="DataSrpStcQuestionAns" table="SRP_STC_QUESTION_ANS" extern="DataSrpBaseValue" xml_tag="" is_xml="true" is_db_table="false" is_stream="true">
+    <desc>
+      <![CDATA[問題回答データ]]>
+    </desc>
+    <constructs>
+      <construct/>
+      <construct/>
+    </constructs>
+  </class>
+  <class serializeKey="41966125460670" name="DataSrpStcQuestionSpinner" table="SRP_STC_QUESTION_SPINNER" extern="DataSrpBaseValue" xml_tag="" is_xml="true" is_db_table="false" is_stream="true">
+    <desc>
+      <![CDATA[問題回答選択肢データ]]>
+    </desc>
+    <constructs>
+      <construct/>
+      <construct/>
+    </constructs>
+  </class>
+  <class serializeKey="17510581691953" name="DataSrpTagObj" table="SRP_TAG_OBJ" extern="DataSrpBase" xml_tag="" is_xml="true" is_db_table="true" is_stream="true">
+    <desc>
+      <![CDATA[タグとオブジェクトの関連づけデータ]]>
+    </desc>
+    <constructs>
+      <construct/>
+      <construct/>
+    </constructs>
+    <member field="id" type="int64" db_field="item_id" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="yes" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[ID]]>
+      </desc>
+    </member>
+    <member field="site_id" type="int" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="yes" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[サイトID]]>
+      </desc>
+    </member>
+    <member field="linkd_obj_type" type="enum" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="yes" null="no" inherit="no" gsmf="no" method="both" obj_role="new" ref_enum="DataSrpBase.OBJ_TYPE" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[オブジェクトタイプ]]>
+      </desc>
+    </member>
+    <member field="tag_id" type="int64" xml_elm="yes" xml_cdata="no" xml_enable="yes" xml_option="no" key="yes" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[タグID]]>
+      </desc>
+    </member>
+    <member field="create_datetime" type="date" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[作成日]]>
+      </desc>
+    </member>
+    <member field="update_datetime" type="date" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[更新日]]>
+      </desc>
+    </member>
+  </class>
+  <class serializeKey="103152229566786" name="DataSrpLinkObj" table="SRP_LINK_OBJ" extern="DataSrpBase" xml_tag="" is_xml="true" is_db_table="true" is_stream="true">
+    <desc>
+      <![CDATA[オブジェクトのリンクデータ]]>
+    </desc>
+    <constructs>
+      <construct/>
+      <construct/>
+    </constructs>
+    <member field="site_id" type="int" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="yes" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[サイトID]]>
+      </desc>
+    </member>
+    <member field="my_id" type="int64" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="yes" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[リンク元ID]]>
+      </desc>
+    </member>
+    <member field="my_obj_type" type="enum" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="yes" null="no" inherit="no" gsmf="no" method="both" obj_role="new" ref_enum="DataSrpBase.OBJ_TYPE" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[リンク元オブジェクトタイプ]]>
+      </desc>
+    </member>
+    <member field="target_id" type="int64" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="yes" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[リンク先ID]]>
+      </desc>
+    </member>
+    <member field="target_obj_type" type="enum" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="yes" null="no" inherit="no" gsmf="no" method="both" obj_role="new" ref_enum="DataSrpBase.OBJ_TYPE" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[リンク先オブジェクトタイプ]]>
+      </desc>
+    </member>
+    <member field="sys_flg" type="int" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="yes" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[システムフラグ]]>
+      </desc>
+    </member>
+    <member field="lnk_data" type="int" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[リンクデータ]]>
+      </desc>
+    </member>
+    <member field="create_datetime" type="date" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[作成日]]>
+      </desc>
+    </member>
+    <member field="update_datetime" type="date" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[更新日]]>
+      </desc>
+    </member>
+  </class>
+  <class serializeKey="76948634104299" name="DataSrpDeleteObj" table="SRP_DELETE" extern="DataSrpBase" xml_tag="" is_xml="true" is_db_table="true" is_stream="true">
+    <desc>
+      <![CDATA[オブジェクトの削除データ]]>
+    </desc>
+    <constructs>
+      <construct/>
+      <construct/>
+    </constructs>
+    <member field="site_id" type="int" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="yes" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[サイトID]]>
+      </desc>
+    </member>
+    <member field="key_data" type="string" db_field="key_data" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="yes" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[キーデータ。複数ある場合は、カンマ区切り]]>
+      </desc>
+    </member>
+    <member field="del_obj_type" type="enum" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="yes" null="no" inherit="no" gsmf="no" method="both" obj_role="new" ref_enum="DataSrpBase.OBJ_TYPE" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[オブジェクトタイプ]]>
+      </desc>
+    </member>
+    <member field="reg_datetime" type="date" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="no" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[登録日]]>
+      </desc>
+    </member>
+  </class>
+  <class serializeKey="136816183232413" name="DataSrpImportHst" table="SRP_IMPORT_HST" extern="DataSrpBase" xml_tag="" is_xml="true" is_db_table="true" is_stream="true">
+    <desc>
+      <![CDATA[インポート履歴データ]]>
+    </desc>
+    <constructs>
+      <construct/>
+      <construct/>
+    </constructs>
+    <member field="computer_id" type="int64" db_field="computer_id" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="yes" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[コンピュータID]]>
+      </desc>
+    </member>
+    <member field="datetime" type="date" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="yes" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[インポート日]]>
+      </desc>
+    </member>
+  </class>
+  <class serializeKey="43482248927047" name="DataSrpExportHst" table="SRP_EXPORT_HST" extern="DataSrpBase" xml_tag="" is_xml="true" is_db_table="true" is_stream="true">
+    <desc>
+      <![CDATA[エクスポート履歴データ]]>
+    </desc>
+    <constructs>
+      <construct/>
+      <construct/>
+    </constructs>
+    <member field="datetime" type="date" xml_elm="no" xml_cdata="no" xml_enable="yes" xml_option="no" key="yes" null="no" inherit="no" gsmf="no" method="both" obj_role="new" date_db_long="no" is_db_field="yes" modify_check="yes">
+      <desc>
+        <![CDATA[エクスポート日]]>
+      </desc>
+    </member>
+  </class>
+</obj>

@@ -1,0 +1,360 @@
+<?xml version="1.0"?> 
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+
+
+	<xsd:annotation>
+		<xsd:appinfo>Type Define</xsd:appinfo>
+		<xsd:documentation>タイプの定義</xsd:documentation>
+	</xsd:annotation>
+	<xsd:simpleType name="typeName">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="typeDesc">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="typeEnumVal">
+		<xsd:restriction base="xsd:unsignedInt"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="typeParamParamType" final="#all">
+		<xsd:restriction base="xsd:integer">
+			<xsd:enumeration value="0"/>
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+			<xsd:enumeration value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="typeParamValue">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="typeParamValueType">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="typeArgParamType" final="#all">
+		<xsd:restriction base="xsd:integer">
+			<xsd:enumeration value="0"/>
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+			<xsd:enumeration value="3"/>
+			<xsd:enumeration value="99"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="typeArgArgAttr" final="#all">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="this"/>
+			<xsd:enumeration value="null"/>
+			<xsd:enumeration value="non"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="typeArgValue">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="typeArgValueType">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="typeField">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="typeDataType" final="#all">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="enum"/>
+			<xsd:enumeration value="int"/>
+			<xsd:enumeration value="uint"/>
+			<xsd:enumeration value="int64"/>
+			<xsd:enumeration value="uint64"/>
+			<xsd:enumeration value="float"/>
+			<xsd:enumeration value="double"/>
+			<xsd:enumeration value="string"/>
+			<xsd:enumeration value="bool"/>
+			<xsd:enumeration value="date"/>
+			<xsd:enumeration value="object"/>
+			<xsd:enumeration value="OBJ_ARRAY"/>
+			<xsd:enumeration value="BASE_OBJ_ARRAY"/>
+			<xsd:enumeration value="void"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="typeDbType" final="#all">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="non"/>
+			<xsd:enumeration value="string"/>
+			<xsd:enumeration value="int"/>
+			<xsd:enumeration value="long"/>
+			<xsd:enumeration value="double"/>
+			<xsd:enumeration value="blob"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="typeXmlTag" final="#all">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="typeMethod" final="#all">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="get"/>
+			<xsd:enumeration value="set"/>
+			<xsd:enumeration value="both"/>
+			<xsd:enumeration value="non"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="typeObjRole" final="#all">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="new"/>
+			<xsd:enumeration value="ref_ptr"/>
+			<xsd:enumeration value="stack_inst"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="typeNewDelMethod" final="#all">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="typeFuncAttr" final="#all">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="static"/>
+			<xsd:enumeration value="virtual"/>
+			<xsd:enumeration value="nin"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="typeReturnAttr" final="#all">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="pointer"/>
+			<xsd:enumeration value="ref"/>
+			<xsd:enumeration value="nin"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	<xsd:annotation>
+		<xsd:appinfo>Elemnt Define</xsd:appinfo>
+		<xsd:documentation>エレメントの定義</xsd:documentation>
+	</xsd:annotation>
+	
+	<xsd:element name="desc" type="typeDesc"/>
+	
+	
+	<xsd:element name="class">
+		<xsd:complexType>
+			<xsd:attributeGroup ref="attrsClass"/>
+			<xsd:sequence>
+				<xsd:element ref="desc" maxOccurs="1"/>
+				<xsd:element ref="enum" maxOccurs="unbounded"/>
+				<xsd:element name="constructs" minOccurs="0" maxOccurs="1">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element ref="construct" maxOccurs="unbounded"/>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				
+				<xsd:element ref="member" maxOccurs="unbounded"/>
+				
+				<xsd:element ref="func" maxOccurs="unbounded"/>
+				
+				
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	
+	
+	<xsd:element name="construct">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="super" maxOccurs="1"/>
+				<xsd:element ref="params" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:element name="params">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="param" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:element name="super">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="arg" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:element name="new_args">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="arg" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:element name="member">
+		<xsd:complexType>
+			<xsd:attribute name="field" type="typeField" use="required"/>
+			<xsd:attribute name="type" type="typeDataType" use="required"/>
+			<xsd:attribute name="db_field" type="xsd:string" use="optional"/>
+			<xsd:attribute name="size" type="xsd:integer" use="optional"/>
+			<xsd:attribute name="xml_tag" type="typeXmlTag" use="optional"/>
+			<xsd:attribute name="xml_elm" type="xsd:boolean" use="optional" default="false"/>
+			<xsd:attribute name="xml_cdata" type="xsd:boolean" use="optional" default="false"/>
+			<xsd:attribute name="xml_enable" type="xsd:boolean" use="optional" default="true"/>
+			<xsd:attribute name="xml_option" type="xsd:boolean" use="optional" default="false"/>
+			<xsd:attribute name="key" type="xsd:boolean" use="optional" default="false"/>
+			<xsd:attribute name="null" type="xsd:boolean" use="optional" default="false"/>
+			<xsd:attribute name="inherit" type="xsd:boolean" use="optional" default="false"/>
+			<xsd:attribute name="gsmf" type="xsd:boolean" use="optional" default="false"/>
+			<xsd:attribute name="method" type="typeMethod" use="optional" default="both"/>
+			<xsd:attribute name="obj_role" type="typeObjRole" use="optional" default="new"/>
+			<xsd:attribute name="nomember" type="xsd:string" use="optional"/>
+			<xsd:attribute name="class" type="xsd:string" use="optional"/>
+			<xsd:attribute name="ref_enum" type="xsd:string" use="optional"/>
+			<xsd:attribute name="date_db_long" type="xsd:boolean" use="optional" default="false"/>
+			<xsd:attribute name="db_type" type="typeDbType" use="optional" default="non"/>
+			<xsd:attribute name="is_db_field" type="xsd:boolean" use="optional" default="false"/>
+			<xsd:attribute name="modify_check" type="xsd:boolean" use="optional" default="true"/>
+			<xsd:attribute name="val_min" type="xsd:string" use="optional"/>
+			<xsd:attribute name="val_max" type="xsd:string" use="optional"/>
+			<xsd:attribute name="init_val" type="xsd:string" use="optional"/>
+			<xsd:attribute name="newMethod" type="typeNewDelMethod" use="optional"/>
+			<xsd:attribute name="delMethod" type="typeNewDelMethod" use="optional"/>
+			<xsd:sequence>
+				<xsd:element ref="desc" maxOccurs="1"/>
+				
+				<xsd:element ret="new_args" maxOccurs="1"/>
+				
+				<xsd:element ret="params" maxOccurs="1"/>
+				
+				<xsd:element name="loaded_classies" maxOccurs="1">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element ref="loaded_class" maxOccurs="unbounded"/>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:element name="return">
+		<xsd:complexType>
+			<xsd:attribute name="attr" type="typeReturnAttr" use="optional" default="non"/>
+			<xsd:sequence>
+				<xsd:element ref="desc" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:element name="func">
+		<xsd:complexType>
+			<xsd:attribute name="name" type="typeName" use="required"/>
+			<xsd:attribute name="attr"  use="optional" default="non"/>
+			<xsd:sequence>
+				<xsd:element ref="desc" maxOccurs="1"/>
+				<xsd:element ref="params" maxOccurs="1"/>
+				<xsd:element ref="return" maxOccurs="1"/>
+				<xsd:element ref="codes" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:element name="enum">
+		<xsd:complexType>
+			<xsd:attribute name="name" type="typeName" use="required"/>
+			<xsd:sequence>
+				<xsd:element ref="desc" maxOccurs="1"/>
+				<xsd:element name="enum_val" maxOccurs="unbounded">
+					<xsd:complexType>
+						<xsd:attribute name="name" type="typeName" use="required"/>
+						<xsd:attribute name="val" type="typeEnumVal"/>
+						<xsd:sequence></xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:element name="param">
+		<xsd:complexType>
+			<xsd:attribute name="name" type="typeName" use="optional"/>
+			<xsd:attribute name="param_type" type="typeParamParamType" use="required"/>
+			<xsd:attribute name="val_type" type="typeParamValueType" use="optional"/>
+			<xsd:attribute name="val" type="typeParamValue" use="optional"/>
+			<xsd:sequence>
+				<xsd:element ref="desc" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:element name="arg">
+		<xsd:complexType>
+			<xsd:attribute name="name" type="typeName" use="optional"/>
+			<xsd:attribute name="param_type" type="typeArgParamType" use="required"/>
+			<xsd:attribute name="val_type" type="typeArgValueType" use="optional"/>
+			<xsd:attribute name="argAttr" type="typeArgArgAttr" use="optional"/>
+			<xsd:attribute name="val" type="typeArgValue" use="optional"/>
+			<xsd:sequence>
+				<xsd:element ref="desc" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="construct">
+		<xsd:element name="params" minOccurs="0" maxOccurs="1">
+			<xsd:complexType>
+				<xsd:element ref="param" maxOccurs="unbounded"/>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:element>
+	
+	<xsd:element name="codes" type="xsd:string">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="code" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:element name="code" type="xsd:string">
+		<xsd:complexType>
+			<xsd:attribute name="lang" type="typeName" use="required"/>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:element name="loaded_class">
+		<xsd:complexType>
+			<xsd:attribute name="name" type="typeName" use="required"/>
+			<xsd:attribute name="keyword" type="typeName" use="required"/>
+			<xsd:attribute name="newMethod" type="typeNewDelMethod" use="required"/>
+			<xsd:sequence>
+				<xsd:element ref="new_args" maxOccurs="1"/>
+				<xsd:element ref="params" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	
+	
+	
+	
+	
+	<xsd:annotation>
+		<xsd:appinfo>Attribute　Group Define</xsd:appinfo>
+		<xsd:documentation>属性グループの定義</xsd:documentation>
+	</xsd:annotation>
+	<xsd:attributeGroup name="attrsClass">
+		<xsd:attribute name="serializeKey" type="xsd:long" use="required"/>
+		<xsd:attribute name="name" type="typeName" use="required"/>
+		<xsd:attribute name="table" extern="xsd:string"/>
+		<xsd:attribute name="extern" extern="xsd:string"/>
+		<xsd:attribute name="xml_tag" extern="xsd:string"/>
+		<xsd:attribute name="is_xml" extern="xsd:boolean" default="true"/>
+		<xsd:attribute name="is_db_table" extern="xsd:boolean" default="true"/>
+		<xsd:attribute name="is_stream" extern="xsd:boolean" default="true"/>
+	</xsd:attributeGroup>
+
+</xsd:schema>
