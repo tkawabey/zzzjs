@@ -1,5 +1,6 @@
 /*
 	プリコンパイル用のヘッダー（VC用）
+	
 */
 #ifndef __ZZZJS_PRECOMPILE_H__
 #define __ZZZJS_PRECOMPILE_H__
