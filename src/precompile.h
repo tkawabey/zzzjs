@@ -1,6 +1,7 @@
 #ifndef __ZZZJS_PRECOMPILE_H__
 #define __ZZZJS_PRECOMPILE_H__
 
+/* 日本語のコメント */
 #include "wx/wxprec.h"
 
 #ifndef WX_PRECOMP
