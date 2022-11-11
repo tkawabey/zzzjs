@@ -4,7 +4,9 @@
 */
 #ifndef __ZZZJS_PRECOMPILE_H__
 #define __ZZZJS_PRECOMPILE_H__
-
+/*
+	Comment
+*/
 #include "wx/wxprec.h"
 
 #ifndef WX_PRECOMP
